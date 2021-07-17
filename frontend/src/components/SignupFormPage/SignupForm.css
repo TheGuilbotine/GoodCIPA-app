@@ -1,1 +1,71 @@
 /* TODO add css styling to sign up and BEM classes to sign up form */
+html {
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-image: url('../images/beer-background.jpg');
+    background-size: cover;
+}
+.signup-container {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.signup-form {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgb(192, 128, 8);
+    border-radius: 11px;
+    padding: 7px;
+    height: 100%;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.fas {
+    border: 1px solid rgb(192, 128, 8);
+    padding: 3px;
+    margin: 3px;
+    border-radius: 3px;
+    color: rgb(192, 128, 8);
+}
+
+.signup-form__input {
+    border: 0;
+}
+
+.signup-form__checkbox-container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+}
+
+.fa-beer {
+    display: flex;
+    align-items: center;
+}
+
+.signup-form__text {
+    color: rgb(192, 128, 8);
+    font-size: larger;
+    font-weight: bold;
+}
+
+.signup-button {
+    border: 0;
+    text-decoration: underline;
+    color: rgb(192, 128, 8);
+    font-size: larger;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.signup-button:hover {
+    cursor:pointer;
+}
