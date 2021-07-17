@@ -29,7 +29,17 @@ html {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
+.signup-form__input-container {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 3px;
+}
+
 .fas {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
     border: 1px solid rgb(192, 128, 8);
     padding: 3px;
     margin: 3px;

@@ -36,62 +36,72 @@ function SignupFormPage() {
         </ul>
         <div className='signup-form__input-container'>
         <i className='fas fa-at'>
-          <input
-            className='signup-form__input'
-            placeholder='Email Address'
-            type='text'
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
+          <div className='signup-form__input-container'>
+            <input
+              className='signup-form__input'
+              placeholder='Email Address'
+              type='text'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
         </i>
         </div>
         <div className='signup-form__input-container'>
           <i className='fas fa-user'>
-            <input
-              className='signup-form__input'
-              placeholder='Username'
-              type='text'
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              required
-            />
-          </i>
-        </div>
-        <div className='signup-form__input-container'>
-          <i className='fas fa-lock'>
-            <input
-              className='signup-form__input'
-              placeholder='Password'
-              type='password'
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
+            <div className='signup-form__input-container'>
+              <input
+                className='signup-form__input'
+                placeholder='Username'
+                type='text'
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
               />
+            </div>
           </i>
         </div>
         <div className='signup-form__input-container'>
           <i className='fas fa-lock'>
-            <input
-              className='signup-form__input'
-              placeholder='Confirm your Password'
-              type='password'
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              required
-            />
+            <div className='signup-form__input-container'>
+              <input
+                className='signup-form__input'
+                placeholder='Password'
+                type='password'
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+          </i>
+        </div>
+        <div className='signup-form__input-container'>
+          <i className='fas fa-lock'>
+            <div className='signup-form__input-container'>
+              <input
+                className='signup-form__input'
+                placeholder='Confirm your Password'
+                type='password'
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+              />
+            </div>
           </i>
         </div>
         <div className='signup-form__checkbox-container'>
           <p className='signup-form__text'>18 or older?</p>
           <i className='fas fa-beer'>
-            <input
-              // TODO implement background check
-              className='signup-form__checkbox'
-              placeholder='Confirm your Password'
-              type='checkbox'
-              required
-            />
+            <div className='signup-form__input-container'>
+              <input
+                // TODO implement background check
+                className='signup-form__checkbox'
+                placeholder='Confirm your Password'
+                type='checkbox'
+                required
+              />
+            </div>
           </i>
         </div>
         <button className='signup-button' type='submit'>Start Sipping</button>
