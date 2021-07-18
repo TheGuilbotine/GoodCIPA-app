@@ -1,26 +1,14 @@
-/*  just for show */
-/* body {
+#modal-content {
+    border-radius: 11px;
+    background-color: rgba(0, 0, 0, 0);;
+}
+
+.login-container {
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     height: 100%;
-}
-
-.login-form__errors {
-    border: 1px solid red;
-    border-radius: 7px;
-    background-color: rgba(255, 0, 0, 0.3);
-}
-
-.login-form__errors__error {
-    color: rgb(170, 40, 40);
-}
-
-.login {
-    box-sizing: border-box;
-    height: 100%;
-    display: flex;
-    justify-content: center;
+    width: 100%;
 }
 
 .login-form {
@@ -28,31 +16,41 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid rgb(16, 16, 92);
-    border-radius: 13px;
-    padding: 11px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    margin: auto;
-
+    border: 1px solid rgb(192, 128, 8);
+    border-radius: 11px;
+    padding: 7px;
+    height: 100%;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
-.login-form__label {
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.login-form__user-container {
+    margin-bottom: 7px;
 }
 
-.login-form__user {
+.login-form__password-container {
+    margin-bottom: 7px;
+}
+
+.login-form__input-container {
     box-sizing: border-box;
-    margin: 10px;
-
+    display: flex;
+    justify-content: space-between;
+    padding-left: 4px;
 }
 
-.login-form__password {
-    margin: 10px;
+.login-form__input {
+    border: 0;
 }
 
-.login-form__button {
-    margin: 10px;
-} */
+.login-button {
+    border: 0;
+    text-decoration: underline;
+    color: rgb(192, 128, 8);
+    font-size: larger;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.login-button:hover {
+    cursor:pointer;
+}

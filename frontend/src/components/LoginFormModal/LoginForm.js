@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
+import './LoginForm.css';
 
 function LoginForm() {
   const dispatch = useDispatch();
@@ -20,32 +21,45 @@ function LoginForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <ul>
-        {errors.map((error, idx) => (
-          <li key={idx}>{error}</li>
-        ))}
-      </ul>
-      <label>
-        Username or Email
-        <input
-          type="text"
-          value={credential}
-          onChange={(e) => setCredential(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Password
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </label>
-      <button type="submit">Log In</button>
-    </form>
+    <div className='login-container'>
+      <form className='login-form' onSubmit={handleSubmit}>
+        <ul className='errors'>
+          {errors.map((error, idx) => (
+            <li key={idx}>{error}</li>
+          ))}
+        </ul>
+        <div className='login-form__user-container'>
+          <i className='fas fa-beer'>
+            <div className='login-form__input-container'>
+              <input
+                className='login-form__input'
+                placeholder='Username or Email'
+                type="text"
+                value={credential}
+                onChange={(e) => setCredential(e.target.value)}
+                required
+              />
+            </div>
+          </i>
+        </div>
+        <div className='login-form__password-container'>
+          <i className='fas fa-lock'>
+            <div className='login-form__input-container'>
+              <input
+                className='login-form__input'
+                placeholder='Password'
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+          </i>
+        </div>
+        <button className='login-button' type="submit">Keep Sipping</button>
+      </form>
+    </div>
+
   );
 }
 

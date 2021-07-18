@@ -1,6 +1,13 @@
 /* TODO add css styling to sign up and BEM classes to sign up form */
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  } */
+
+
 html {
-    height: 100%;
+    height: 100vh;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
@@ -8,6 +15,12 @@ html {
     background-image: url('../images/beer-background.jpg');
     background-size: cover;
 }
+
+body {
+    height: 100vh;
+    width: 100vh;
+}
+
 .signup-container {
     box-sizing: border-box;
     display: flex;
@@ -33,7 +46,7 @@ html {
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
-    padding-left: 3px;
+    padding-left: 4px;
 }
 
 .fas {

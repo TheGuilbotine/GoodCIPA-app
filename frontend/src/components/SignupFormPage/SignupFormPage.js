@@ -31,22 +31,22 @@ function SignupFormPage() {
   return (
     <div className='signup-container'>
       <form className='signup-form' onSubmit={handleSubmit}>
-        <ul>
+        <ul className='errors'>
           {errors.map((error, idx) => <li key={idx}>{error}</li>)}
         </ul>
         <div className='signup-form__input-container'>
-        <i className='fas fa-at'>
-          <div className='signup-form__input-container'>
-            <input
-              className='signup-form__input'
-              placeholder='Email Address'
-              type='text'
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-        </i>
+          <i className='fas fa-at'>
+            <div className='signup-form__input-container'>
+              <input
+                className='signup-form__input'
+                placeholder='Email Address'
+                type='text'
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+          </i>
         </div>
         <div className='signup-form__input-container'>
           <i className='fas fa-user'>
@@ -91,7 +91,7 @@ function SignupFormPage() {
           </i>
         </div>
         <div className='signup-form__checkbox-container'>
-          <p className='signup-form__text'>18 or older?</p>
+          <p className='signup-form__text'>21 or older?</p>
           <i className='fas fa-beer'>
             <div className='signup-form__input-container'>
               <input
