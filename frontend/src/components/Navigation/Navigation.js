@@ -18,7 +18,7 @@ function Navigation({ isLoaded }){
       <>
         <span className='nav-bar__login-signup'>
           <LoginFormModal />
-          <NavLink to="/signup">Sign Up</NavLink>
+          <NavLink className='nav__signup-button' to="/signup">Start Sipping</NavLink>
         </span>
       </>
     );
@@ -26,7 +26,7 @@ function Navigation({ isLoaded }){
 
   return (
     <div className='nav-bar'>
-      <NavLink exact to="/">Home</NavLink>
+      <NavLink className='nav__home-button' exact to="/">GoodCIPA</NavLink>
       {isLoaded && sessionLinks}
     </div>
 
