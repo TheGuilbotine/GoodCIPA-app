@@ -23,9 +23,9 @@ function LoginForm() {
   return (
     <div className='login-container'>
       <form className='login-form' onSubmit={handleSubmit}>
-        <ul className='errors'>
+        <ul className='errors__container'>
           {errors.map((error, idx) => (
-            <li key={idx}>{error}</li>
+            <li key={idx} className='errors'>{error}</li>
           ))}
         </ul>
         <div className='login-form__user-container'>

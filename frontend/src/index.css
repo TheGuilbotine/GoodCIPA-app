@@ -1,1 +1,10 @@
 /* TODO Add site wide styles */
+.errors__container {
+    display: flex;
+    justify-content: center;
+}
+
+.errors {
+    list-style-type: none;
+    color: red;
+}

@@ -5,6 +5,8 @@ import SignupFormPage from './components/SignupFormPage';
 import * as sessionActions from './store/session';
 import Navigation from './components/Navigation';
 import HomePage from './components/HomePage'
+import Footer from './components/Footer'
+import './index.css'
 
 function App() {
   const dispatch = useDispatch();
@@ -26,6 +28,7 @@ function App() {
           </Route>
         </Switch>
       )}
+      <Footer />
     </>
   );
 }
