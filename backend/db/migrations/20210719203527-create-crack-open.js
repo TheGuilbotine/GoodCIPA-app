@@ -16,7 +16,7 @@ module.exports = {
       ipaId: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        references: {modlel: 'IPAs'}
+        references: {model: 'IPAs'}
       },
       comment: {
         allowNull: false,

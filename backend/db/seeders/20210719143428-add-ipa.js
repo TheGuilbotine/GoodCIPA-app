@@ -13,6 +13,8 @@ module.exports = {
         country: 'United States of America',
         rating: 6,
         ABV: 6.3,
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
         userId: 1,
@@ -24,6 +26,8 @@ module.exports = {
         country: 'Netherlands',
         rating: 5.5,
         ABV: 6.5,
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
         userId: 1,
@@ -35,6 +39,8 @@ module.exports = {
         country: 'France',
         rating: 5.5,
         ABV: 4.5,
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
         userId: 1,
@@ -46,6 +52,8 @@ module.exports = {
         country: 'Neherlands',
         rating: 6.5,
         ABV: 6,
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
         userId: 1,
@@ -57,6 +65,8 @@ module.exports = {
         country: 'Italy',
         rating: 5,
         ABV: 3.7,
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
         userId: 1,
@@ -68,6 +78,8 @@ module.exports = {
         country: 'Belgium',
         rating: 5,
         ABV: 6.8,
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
         userId: 1,
@@ -79,6 +91,8 @@ module.exports = {
         country: 'Spain',
         rating: 6.5,
         ABV: 6,
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
         userId: 1,
@@ -90,6 +104,8 @@ module.exports = {
         country: 'England',
         rating: 6.5,
         ABV: 5.5,
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
         userId: 1,
@@ -101,6 +117,8 @@ module.exports = {
         country: 'Denmark',
         rating: 6.5,
         ABV: 7.5,
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
         userId: 1,
@@ -112,6 +130,8 @@ module.exports = {
         country: 'England',
         rating: 5,
         ABV: 8.1,
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
         userId: 1,
@@ -123,6 +143,8 @@ module.exports = {
         country: 'England',
         rating: 5.5,
         ABV: 6.7,
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
         userId: 1,
@@ -134,17 +156,21 @@ module.exports = {
         country: 'Norway',
         rating: 5.5,
         ABV: 10,
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
         userId: 1,
         name: 'Reptile Steel',
-        imageUrl: 'https://duckduckgo.com/?q=Steel%20City%20Brewing%20x%20Reptilian%20%2D%20Reptile%20Steel&iax=images&ia=images&iai=https://www.estucerveza.com/productos/imagenes/img_2991_c76f667bf884f93a14c5651a300a89d5_20.png&t=brave',
+        imageUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.RautyWQ-sLzaWeoT8SWxDQHaHa%26pid%3DApi&f=1',
         brewery: 'Steel City Brewing X',
         breweryLink: null,
         description: 'Fruited Sour Ipa with Pineapple and Summit, Chinook & Nelson Sauvin Hops.',
         country: 'Spain',
         rating: 6,
         ABV: 6.3,
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
         userId: 1,
@@ -156,6 +182,8 @@ module.exports = {
         country: 'France',
         rating: 6,
         ABV: 4.7,
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
         userId: 1,
@@ -167,6 +195,8 @@ module.exports = {
         country: 'Estonia',
         rating: 5.5,
         ABV: 5.6,
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
         userId: 1,
@@ -178,17 +208,21 @@ module.exports = {
         country: 'France',
         rating: 6,
         ABV: 6.2,
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
         userId: 1,
         name: 'Coreff IPA',
-        imageUrl: 'https://d33za54wpumlhy.cloudfront.net/eyJidWNrZXQiOiJzYXZldXJiaWVyZSIsImtleSI6ImltZy9wLzkxMDQtNDMyNzQuanBnIiwiZWRpdHMiOnsid2VicCI6eyJxdWFsaXR5Ijo4MH0sInBuZyI6eyJxdWFsaXR5Ijo4MH0sInJlc2l6ZSI6eyJ3aWR0aCI6Nzg2LCJoZWlnaHQiOjQ5MCwiZml0IjoiY29udGFpbiIsImJhY2tncm91bmQiOnsiciI6MCwiZyI6MCwiYiI6MCwiYWxwaGEiOjB9fX19',
+        imageUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.cIfHEvIkeuLGmcd_r6fAjQHaHa%26pid%3DApi&f=1',
         brewery: 'Brassery Coreff',
         breweryLink: 'https://brasserie-coreff.com/',
         description: 'A light, floral IPA with classic fruity hops flavours',
         country: 'France',
         rating: 6.5,
         ABV: 5.6,
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
         userId: 1,
@@ -200,6 +234,8 @@ module.exports = {
         country: 'France',
         rating: 6.5,
         ABV: 4.5,
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
         userId: 1,
@@ -211,6 +247,8 @@ module.exports = {
         country: 'France',
         rating: 6.5,
         ABV: 6,
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
         userId: 1,
@@ -222,6 +260,8 @@ module.exports = {
         country: 'France',
         rating: 5,
         ABV: 5,
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
         userId: 1,
@@ -233,6 +273,8 @@ module.exports = {
         country: 'France',
         rating: 6.5,
         ABV: 6.3,
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
         userId: 1,
@@ -244,6 +286,8 @@ module.exports = {
         country: 'France',
         rating: 6,
         ABV: 5.5,
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
         userId: 1,
@@ -255,6 +299,8 @@ module.exports = {
         country: 'Northern Ireland',
         rating: 7.5,
         ABV: 6,
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
         userId: 1,
@@ -266,6 +312,8 @@ module.exports = {
         country: 'Norway',
         rating: 8,
         ABV: 7.2,
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
         userId: 1,
@@ -277,6 +325,8 @@ module.exports = {
         country: 'Northern Ireland',
         rating: 6.5,
         ABV: 4.3,
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
         userId: 1,
@@ -288,6 +338,8 @@ module.exports = {
         country: 'England',
         rating: 5.5,
         ABV: 5.2,
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
       {
         userId: 1,
@@ -299,6 +351,8 @@ module.exports = {
         country: 'United States of America',
         rating: 6,
         ABV: 5,
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
     ], {});
 

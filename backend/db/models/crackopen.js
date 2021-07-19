@@ -9,11 +9,13 @@ module.exports = (sequelize, DataTypes) => {
     },
     userId: {
       allowNull: false,
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      references: {model: 'Users'}
     },
     ipaId: {
       allowNull: false,
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      references: {model: 'IPAs'}
     },
     comment: {
       allowNull: false,
@@ -29,8 +31,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {});
   CrackOpen.associate = function(models) {
-    CrackOpen.hasMany(models.User, { foreignKey: CrackOpen.userId})
-    CrackOpen.hasMany(models.IPA, {foreignKey: CrackOpen.ipaId})
+    CrackOpen.belongsTo(models.User, { foreignKey: 'userId'})
+    CrackOpen.belongsTo(models.IPA, {foreignKey: 'ipaId'})
   };
   return CrackOpen;
 };

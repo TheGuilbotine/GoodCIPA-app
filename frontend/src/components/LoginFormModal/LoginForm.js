@@ -25,7 +25,7 @@ function LoginForm() {
   const demoLogin = () => {
     const credential = 'Demo-lition'
     const password = 'password'
-    history.push('profile')
+    history.push('/profile')
     return dispatch(sessionActions.login({ credential, password }))
       .catch(async (res) => {
         const data = await res.json();
@@ -70,7 +70,7 @@ function LoginForm() {
             </div>
           </i>
         </div>
-        <button className='login-button' type='submit' onClick={history.push('/profile')}>Keep Sipping</button>
+        <button className='login-button' type='submit'>Keep Sipping</button>
       </form>
     </div>
 

@@ -1,10 +1,15 @@
+
+import CreateIpaForm from '../CreateIpaForm';
 import './ProfilePage.css'
 
 
 function ProfilePage() {
 
     return (
-        <h1>Welcome User</h1>
+        <div className='profile-page__container'>
+            <button>Cracked Open</button>
+            <button>IPAs</button>
+        </div>
     )
 }
 
