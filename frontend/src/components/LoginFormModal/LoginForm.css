@@ -43,6 +43,19 @@
     border: 0;
 }
 
+.demo-button {
+    margin-top: 7px;
+    border: 0;
+    text-decoration: underline;
+    color: rgb(192, 128, 8);
+    font-size: larger;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.demo-button:hover {
+    cursor: pointer;
+}
+
 .login-button {
     border: 0;
     text-decoration: underline;

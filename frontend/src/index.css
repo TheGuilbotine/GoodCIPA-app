@@ -8,3 +8,7 @@
     list-style-type: none;
     color: red;
 }
+
+#root {
+    height: 100%;
+}

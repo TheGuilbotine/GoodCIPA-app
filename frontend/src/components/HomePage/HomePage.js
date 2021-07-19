@@ -3,9 +3,11 @@ import './HomePage.css'
 function HomePage() {
     return (
         <div className='splash-page__container'>
-            <h1 className='splash-page__text'>Welcome to GoodCIPA!</h1>
-            <p className='splash-page__text'>Drink ipa-lly!</p>
-            <h2 className='splash-page__text'>Some people like beer, others love Indian Pale Ale.</h2>
+            <div className='splash-page__welcome'>
+                <h1 className='splash-page__text'>Welcome to GoodCIPA!</h1>
+                <p className='splash-page__text'>Drink ipa-lly!</p>
+                <h2 className='splash-page__text'>Some people like beer, others love Indian Pale Ale.</h2>
+            </div>
             <div className='good-cipa'>
                 <h3 className='splash-page__text'>How to be a Good CIPA.</h3>
                 <p className='splash-page__text'>
@@ -15,11 +17,27 @@ function HomePage() {
                     Good Cold Indian Pale Ale sipper.
                 </p>
             </div>
-
-            <input className='splash-page__search' type="text" placeholder="Search.."></input>
-            <ul>
-                searched items
-            </ul>
+            <div className='splash-page__search-bar'>
+                <input className='splash-page__search' type="text" placeholder="  Search..."></input>
+            </div>
+            <div className='splash-page__search-container'>
+                <ul className='splash-page__search-results'>
+                    SEARCHED ITEMS HERE
+                </ul>
+            </div>
+            <div className='splash-page__disclaimer-container'>
+                <h3 className='splash-page__text'>
+                    There are some people who should not drink any alcohol, including those who are:
+                </h3>
+                <ul className='splash-page__disclaimer-list'></ul>
+                    <li className='splash-page__text'>Younger than age 21.</li>
+                    <li className='splash-page__text'>Pregnant or may be pregnant.</li>
+                    <li className='splash-page__text'>Driving, planning to drive, or participating in other activities requiring skill, coordination, and alertness.</li>
+                    <li className='splash-page__text'>Taking certain prescription or over-the-counter medications that can interact with alcohol.</li>
+                    <li className='splash-page__text'>Suffering from certain medical conditions.</li>
+                    <li className='splash-page__text'>Recovering from alcoholism or are unable to control the amount they drink.</li>
+                <h4 className='splash-page__text'>By adhering to the <a className='splash-page-link' href='https://www.cdc.gov/alcohol/fact-sheets/moderate-drinking.htm'>Dietary Guidelines</a>, you can reduce the risk of harm to yourself or others.</h4>
+            </div>
             <div className='good-cipa history'>
                 <h3 className='splash-page__text'>About IPA</h3>
                 <p className='splash-page__text'>
@@ -34,8 +52,8 @@ function HomePage() {
                 to serve as a preservative.  As it became more popular, other breweries started to create their own versions,
                 making this strongly flavored pale ale a fixture across the world.
                 India Pale Ales all but dropped off the map when the Prohibition occurred in America,
-                until a resurgence of home brewing in the 1970’s.' -brewdog.com
-                <a href='https://www.brewdog.com/blog/a-brief-history-of-the-ipa'>-brewdog.com</a>
+                until a resurgence of home brewing in the 1970’s.'
+                <a className='splash-page-link' href='https://www.brewdog.com/blog/a-brief-history-of-the-ipa'>-brewdog.com</a>
                 </p>
             </div>
 

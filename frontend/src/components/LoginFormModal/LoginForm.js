@@ -20,13 +20,24 @@ function LoginForm() {
     );
   };
 
+  const demoLogin = () => {
+    const credential = 'Demo-lition'
+    const password = 'password'
+    return dispatch(sessionActions.login({ credential, password }))
+      .catch(async (res) => {
+        const data = await res.json();
+        if (data && data.errors) setErrors(data.errors);
+      });
+  }
+
   return (
     <div className='login-container'>
       <form className='login-form' onSubmit={handleSubmit}>
+        <button className='demo-button' type='submit' onClick={demoLogin}>Demo and Take a Taste</button>
         <ul className='errors__container'>
           {errors.map((error, idx) => (
             <li key={idx} className='errors'>{error}</li>
-          ))}
+            ))}
         </ul>
         <div className='login-form__user-container'>
           <i className='fas fa-beer'>
