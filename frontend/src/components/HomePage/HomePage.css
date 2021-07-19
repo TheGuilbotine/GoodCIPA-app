@@ -1,3 +1,21 @@
 .splash-page__text {
     color: rgb(192, 128, 8);
+    text-align: center;
+}
+
+.good-cipa {
+    padding: 7px;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    border: 1px solid rgb(192, 128, 8);
+    border-radius: 11px;
+}
+
+.splash-page__search {
+    width: 97%;
+    height: 33px;
+    margin: 22px;
 }
