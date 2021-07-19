@@ -5,3 +5,18 @@
     font-size: larger;
     background-color: rgba(0, 0, 0, 0);
 } */
+.nav-bar {
+    background-color: rgba(192, 128, 8, 0.8);
+    padding: 7px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 11px;
+}
+
+.nav-bar__login-signup {
+
+}
+
+.profile-button {
+    padding: 3px;
+}

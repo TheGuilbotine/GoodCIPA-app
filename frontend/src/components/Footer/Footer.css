@@ -1,3 +1,13 @@
+footer {
+    border: 1px solid cadetblue;
+    border-radius: 11px;
+    margin-top: 22px;
+    padding: 3px;
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
 .footer__name-link {
     margin-right: 7px;
 }
@@ -12,16 +22,6 @@
 .footer__icons {
     display: flex;
     justify-content: space-around;
-}
-
-footer {
-    border-radius: 11px;
-    position: fixed;
-    bottom: 5px;
-    display: flex;
-    justify-content: flex-end;
-    width: 97%;
-    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .footer__designed-by {
