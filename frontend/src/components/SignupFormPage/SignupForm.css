@@ -21,7 +21,14 @@ body {
     width: 100%;
 }
 
+/* footer {
+    position: fixed;
+    bottom: 7px;
+    width: 97%;
+} */
+
 .signup-container {
+    margin-top: 33px;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
