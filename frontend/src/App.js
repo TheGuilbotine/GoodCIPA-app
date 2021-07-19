@@ -5,6 +5,7 @@ import SignupFormPage from './components/SignupFormPage';
 import * as sessionActions from './store/session';
 import Navigation from './components/Navigation';
 import HomePage from './components/HomePage'
+import ProfilePage from './components/ProfilePage';
 import Footer from './components/Footer'
 import './index.css'
 
@@ -25,6 +26,9 @@ function App() {
           </Route>
           <Route path='/signup'>
             <SignupFormPage />
+          </Route>
+          <Route path='/profile'>
+            <ProfilePage />
           </Route>
         </Switch>
       )}
