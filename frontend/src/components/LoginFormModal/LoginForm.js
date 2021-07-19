@@ -33,7 +33,7 @@ function LoginForm() {
   return (
     <div className='login-container'>
       <form className='login-form' onSubmit={handleSubmit}>
-        <button className='demo-button' type='submit' onClick={demoLogin}>Demo and Take a Taste</button>
+        <button className='demo-button' type='submit' onClick={demoLogin}>Demo and Take a Sip</button>
         <ul className='errors__container'>
           {errors.map((error, idx) => (
             <li key={idx} className='errors'>{error}</li>
