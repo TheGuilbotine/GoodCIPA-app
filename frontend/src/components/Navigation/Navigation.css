@@ -37,6 +37,10 @@
     background-color: rgba(0, 0, 0, 0);
 }
 
+.nav__login-button:hover {
+    cursor: pointer;
+}
+
 .nav__signup-button {
     text-decoration: none;
     text-align: center;

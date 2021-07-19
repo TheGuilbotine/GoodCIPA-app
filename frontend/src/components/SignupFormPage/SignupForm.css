@@ -44,7 +44,8 @@ body {
     border: 1px solid rgb(192, 128, 8);
     border-radius: 11px;
     padding: 7px;
-    height: 100%;
+    margin-top: 200px;
+    height: 300px;
     width: 300px;
     background-color: rgba(0, 0, 0, 0.8);
 }
