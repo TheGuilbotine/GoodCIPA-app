@@ -26,7 +26,11 @@ export default function IpaList() {
                         Back
                     </button>
                 </NavLink>
-                <button className='ipa-list__add-ipa'>+</button>
+                <NavLink to='/new-ipa'>
+                    <button className='ipa-list__add-ipa'>
+                        +
+                    </button>
+                </NavLink>
             </div>
             {ipas.map(ipa => (
                 // TODO add description to the right of the div

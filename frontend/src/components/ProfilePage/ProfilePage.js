@@ -1,6 +1,6 @@
 // import { useHistory } from 'react-router';
 import { NavLink } from 'react-router-dom';
-import CreateIpaForm from '../CreateIpaForm';
+import AddIpa from '../AddIpa';
 import './ProfilePage.css'
 
 

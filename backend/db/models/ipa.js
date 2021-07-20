@@ -37,7 +37,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     rating: {
       allowNull: false,
-      type: DataTypes.DECIMAL(10, 2),
+      type: DataTypes.DECIMAL(10, 1),
       validate: {
         max: 10,
         min: 1
@@ -45,7 +45,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     ABV: {
       allowNull: false,
-      type: DataTypes.DECIMAL(10, 2),
+      type: DataTypes.DECIMAL(10, 1),
     },
     createdAt: {
       allowNull: false,

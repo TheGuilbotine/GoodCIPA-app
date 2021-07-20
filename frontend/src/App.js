@@ -9,8 +9,9 @@ import ProfilePage from './components/ProfilePage';
 import IpaList from './components/IpaListPage';
 import IpaPage from './components/IpaPage/IpaPage';
 import CrackedOpen from './components/CrackedOpen';
-import Footer from './components/Footer'
-import './index.css'
+import AddIpa from './components/AddIpa';
+import Footer from './components/Footer';
+import './index.css';
 
 function App() {
   const dispatch = useDispatch();
@@ -36,10 +37,13 @@ function App() {
           <Route path='/ipas'>
             <IpaList />
           </Route>
+          <Route path='/new-ipa'>
+            <AddIpa />
+          </Route>
           <Route path='/cracked-open'>
             <CrackedOpen />
           </Route>
-          <Route path='/ipas/:id'>
+          <Route path='/ipas/:id(\\d)'>
             <IpaPage />
           </Route>
         </Switch>
