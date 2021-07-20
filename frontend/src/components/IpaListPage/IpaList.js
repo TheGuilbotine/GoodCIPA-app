@@ -17,7 +17,7 @@ export default function IpaList() {
             }
         })();
     }, []);
-
+    console.log('IPAS ====>', ipas)
     return (
         <div className='ipa-list__container'>
             <div className='ipa-list__buttons__container'>
@@ -48,9 +48,13 @@ export default function IpaList() {
                                     {ipa.brewery}
                                 </NavLink>
                             </h3>
-                            <h4>{ipa.country} * ABV{ipa.ABV}% * Rating: {ipa.rating} Hops</h4>
+                            <h4>{ipa.country} * ABV {ipa.ABV}% * Rating: {ipa.rating} Hops</h4>
                             {/* <p>{ipa.description}</p> */}
                         </div>
+                    </div>
+                    <div className='ipa-list__crud-buttons'>
+                        <button className='ipa-list__edit-button'>EDIT</button>
+                        <button className='ipa-list__delete-button'>DELETE</button>
                     </div>
                 </div>
             ))}

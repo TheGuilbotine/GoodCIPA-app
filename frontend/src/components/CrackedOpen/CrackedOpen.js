@@ -14,14 +14,13 @@ export default function CrackedOpen() {
                 const newReviews = await res.json();
                 setReviews(newReviews);
             }
-
-            console.log('REVIEWS===>', reviews);
         })();
     }, []);
+    console.log('REVIEWS===>', reviews);
 
     return (
         <div className='review-list__container'>
-            {/* <div className='review-list__buttons__container'>
+            <div className='review-list__buttons__container'>
                 <NavLink to='/profile'>
                     <button className='review-list__buttons__back'>
                         Back
@@ -33,26 +32,25 @@ export default function CrackedOpen() {
                 <div className='review-list__review-link__container'>
                     <div className='review-list__review-link__image__container'>
                         <NavLink to={`/reviews/${review.id}`} key={review.id} className='review-list__review-link__image'>
-                            <img className='reviewLabel' src={review.User.imageUrl} alt={review.name}/>
+                            <img className='reviewLabel' src={review.IPA.imageUrl} alt={review.name}/>
                         </NavLink>
                     </div>
                     <div className='review-list__review-info'>
                         <div className='review-list__review-info__container'>
-                            <h2>
-                                <NavLink to={`/reviews/${review.id}`} key={review.id} className='review-list__review-link__name'>
-                                    {review.name}
-                                </NavLink>
-                            </h2>
-                            <h3>
-                                <NavLink to={`${review.breweryLink}`} key={review.id} className='review-list__review-link__brewery'>
-                                    {review.brewery}
-                                </NavLink>
-                            </h3>
-                            <h4>{review.country} * ABV{review.ABV}% * Rating: {review.rating} Hops</h4>
+                            <p>
+                                <b>{review.User.username}</b> has cracked open a <b>{review.IPA.name}</b> from <b>{review.IPA.brewery}</b>.
+                            </p>
+                            <p>
+                                {review.comment}
+                            </p>
                         </div>
                     </div>
+                    <div className='review-list__crud-buttons'>
+                        <button className='review-list__edit-button'>EDIT</button>
+                        <button className='review-list__delete-button'>DELETE</button>
+                    </div>
                 </div>
-            ))} */}
+            ))}
         </div>
     )
 }
