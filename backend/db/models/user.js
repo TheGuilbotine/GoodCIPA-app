@@ -52,6 +52,7 @@ module.exports = (sequelize, DataTypes) => {
   */
   User.associate = function(models) {
     User.hasMany(models.IPA, {foreignKey: 'userId'})
+    User.hasMany(models.CrackOpen, {foreignKey: 'userId'})
   };
 
   User.prototype.toSafeObject = function() { // Cannot be an arrow function

@@ -14,6 +14,10 @@
     border-radius: 11px;
 }
 
+li {
+    list-style-type: none;
+}
+
 .nav-bar__login-signup {
     display: flex;
     align-items: center;

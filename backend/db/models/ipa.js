@@ -59,6 +59,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   IPA.associate = function(models) {
     IPA.belongsTo(models.User, {foreignKey: 'userId'});
+    IPA.hasMany(models.CrackOpen, {foreignKey: 'ipaId'});
   };
   return IPA;
 };
