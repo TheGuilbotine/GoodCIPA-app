@@ -14,10 +14,10 @@
     border-radius: 11px;
 }
 
-/* .nav-bar__login-signup {
+.nav-bar__login-signup {
     display: flex;
-    justify-content: space-between;
-} */
+    align-items: center;
+}
 
 .nav__home-button {
     text-decoration: none;
@@ -25,7 +25,19 @@
     text-shadow: rgb(184, 242, 245) 1px 0 10px;
     color: rgb(26, 59, 61);
     font-weight: 800;
+    align-self: center;
 }
+
+.nav__home-button__logo {
+    height: 77px;
+    border-radius: 50%;
+    transition: 3s;
+}
+
+.nav__home-button__logo:hover {
+    transform:rotate(360deg);
+}
+
 
 .nav__login-button {
     border-radius: 11px;

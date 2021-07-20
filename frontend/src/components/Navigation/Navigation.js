@@ -26,7 +26,9 @@ function Navigation({ isLoaded }){
 
   return (
     <div className='nav-bar'>
-      <NavLink className='nav__home-button' exact to='/'>GoodCIPA</NavLink>
+      <NavLink className='nav__home-button' exact to='/'>
+          <img className='nav__home-button__logo' src='https://i.imgur.com/xOksAty.png' alt='GoodCIPA Logo'/>
+      </NavLink>
       {isLoaded && sessionLinks}
     </div>
 

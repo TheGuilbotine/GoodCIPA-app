@@ -7,8 +7,13 @@ function ProfilePage() {
 
     return (
         <div className='profile-page__container'>
-            <button>Cracked Open</button>
-            <button>IPAs</button>
+            <div className='profile-buttons__container'>
+                <button>Cracked Open</button>
+                <button>IPAs</button>
+            </div>
+            <div className='profile-content__container'>
+
+            </div>
         </div>
     )
 }

@@ -1,0 +1,8 @@
+.profile-page__container {
+    display: flex;
+    justify-content: center;
+}
+
+.profile-buttons__container {
+    margin-top: 11px;
+}
