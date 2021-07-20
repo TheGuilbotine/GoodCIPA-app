@@ -16,7 +16,7 @@ const AddIpa = () => {
     const [breweryLink, setBreweryLink] = useState('');
     const [country, setCountry] = useState('');
     const [rating, setRating] = useState(5);
-    const [ABV, setABV] = useState(0);
+    const [ABV, setABV] = useState(5.5);
 
     // const updateUserId = (e) => setUserId(e.target.value);
     const updateIpaName = (e) => setIpaName(e.target.value);
