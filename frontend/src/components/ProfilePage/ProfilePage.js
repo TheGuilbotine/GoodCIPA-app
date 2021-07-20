@@ -10,7 +10,11 @@ function ProfilePage() {
     return (
         <div className='profile-page__container'>
             <div className='profile-buttons__container'>
-                <button>Cracked Open</button>
+                <NavLink to='/cracked-open'>
+                    <button>
+                        Cracked Open
+                    </button>
+                </NavLink>
                 <NavLink to='/ipas'>
                     <button>
                         IPAs

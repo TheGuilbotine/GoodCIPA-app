@@ -7,18 +7,18 @@ const { IPA, User} = require('../../db/models');
 
 const router = express.Router();
 
-router.get(':id(\\d+)', asyncHandler(async (req, res, next) => {
-    const id = parseInt(req.params.id);
+// router.get(':id(\\d+)', asyncHandler(async (req, res, next) => {
+//     const id = parseInt(req.params.id);
 
-    try {
-        const ipa = await IPA.findByPk(id,{
-            include: [User]
-        });
-        req.json(ipa);
-    } catch(err) {
-        next(err);
-    }
-}));
+//     try {
+//         const ipa = await IPA.findByPk(id,{
+//             include: [User]
+//         });
+//         req.json(ipa);
+//     } catch(err) {
+//         next(err);
+//     }
+// }));
 
 router.get('/', asyncHandler(async (req, res, next) => {
     try {

@@ -39,7 +39,7 @@ module.exports = {
       },
       rating: {
         allowNull: false,
-        type: Sequelize.DECIMAL(10, 2),
+        type: Sequelize.DECIMAL(10, 1),
         validate: {
           max: 10,
           min: 1

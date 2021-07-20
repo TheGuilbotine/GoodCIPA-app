@@ -20,7 +20,16 @@ export default function IpaList() {
 
     return (
         <div className='ipa-list__container'>
+            <div className='ipa-list__buttons__container'>
+                <NavLink to='/profile'>
+                    <button className='ipa-list__buttons__back'>
+                        Back
+                    </button>
+                </NavLink>
+                <button className='ipa-list__add-ipa'>+</button>
+            </div>
             {ipas.map(ipa => (
+                // TODO add description to the right of the div
                 <div className='ipa-list__ipa-link__container'>
                     <div className='ipa-list__ipa-link__image__container'>
                         <NavLink to={`/ipas/${ipa.id}`} key={ipa.id} className='ipa-list__ipa-link__image'>
@@ -39,7 +48,7 @@ export default function IpaList() {
                                     {ipa.brewery}
                                 </NavLink>
                             </h3>
-                            <h4>{ipa.country} * ABV{ipa.ABV}% * Rating: {ipa.rating}Hops</h4>
+                            <h4>{ipa.country} * ABV{ipa.ABV}% * Rating: {ipa.rating} Hops</h4>
                             {/* <p>{ipa.description}</p> */}
                         </div>
                     </div>

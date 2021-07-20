@@ -7,18 +7,18 @@ const { IPA, User, CrackOpen} = require('../../db/models');
 
 const router = express.Router();
 
-router.get(':id(\\d+)', asyncHandler(async (req, res, next) => {
-    const id = parseInt(req.params.id);
+// router.get(':id(\\d+)', asyncHandler(async (req, res, next) => {
+//     const id = parseInt(req.params.id);
 
-    try {
-        const crackOpen = await CrackOpen.findByPk(id,{
-            include: [User, IPA]
-        });
-        req.json(crackOpen);
-    } catch(err) {
-        next(err);
-    }
-}));
+//     try {
+//         const crackOpen = await CrackOpen.findByPk(id,{
+//             include: [User, IPA]
+//         });
+//         req.json(crackOpen);
+//     } catch(err) {
+//         next(err);
+//     }
+// }));
 
 router.get('/', asyncHandler(async (req, res, next) => {
     try {
