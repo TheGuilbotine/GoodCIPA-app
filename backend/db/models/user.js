@@ -51,7 +51,8 @@ module.exports = (sequelize, DataTypes) => {
   should not be exposed to other users.
   */
   User.associate = function(models) {
-    // associations can be defined here
+    User.hasMany(models.IPA, {foreignKey: 'userId'})
+    User.hasMany(models.CrackOpen, {foreignKey: 'userId'})
   };
 
   User.prototype.toSafeObject = function() { // Cannot be an arrow function

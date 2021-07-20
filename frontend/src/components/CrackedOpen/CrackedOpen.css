@@ -1,0 +1,46 @@
+.review-list__container {
+    margin-top: 22px;
+}
+
+.review-list__buttons__container {
+    margin-bottom: 9px;
+}
+
+.review-list__review-link__container {
+    margin-top: 2px;
+    padding: 7px;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    align-content: center;
+    border: 1px solid rgb(192, 128, 8);
+    border-radius: 11px;
+    color:burlywood;
+}
+
+.review-list__review-link__image__container {
+    display: flex;
+    align-self: center;
+}
+
+.reviewLabel {
+    height: 99px;
+    border-radius: 33%;
+    margin: 0px 11px;
+}
+
+.review-list__review-link__name {
+    color: rgb(192, 128, 8);
+    text-decoration: none;
+}
+
+.review-list__review-link__brewery {
+    color: rgb(230, 171, 64);
+    text-decoration: none;
+}
+
+.review-list__crud-buttons {
+    display: flex;
+    align-items: flex-end;
+}

@@ -18,7 +18,7 @@ function Navigation({ isLoaded }){
       <>
         <span className='nav-bar__login-signup'>
           <LoginFormModal />
-          <NavLink className='nav__signup-button' to="/signup">Create Account</NavLink>
+          <NavLink className='nav__signup-button' to='/signup'>Create Account</NavLink>
         </span>
       </>
     );
@@ -26,7 +26,9 @@ function Navigation({ isLoaded }){
 
   return (
     <div className='nav-bar'>
-      <NavLink className='nav__home-button' exact to="/">GoodCIPA</NavLink>
+      <NavLink className='nav__home-button' exact to='/'>
+          <img className='nav__home-button__logo' src='https://i.imgur.com/xOksAty.png' alt='GoodCIPA Logo'/>
+      </NavLink>
       {isLoaded && sessionLinks}
     </div>
 
