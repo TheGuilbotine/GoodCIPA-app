@@ -4,9 +4,7 @@ import { csrfFetch } from '../../store/csrf';
 import './IpaPage.css'
 
 
-
-
-export default function ListingPage() {
+export default function IpaPage() {
     const [userId, setUserId] = useState(/*TODO user.id*/);
     const [ipaName, setIpaName] = useState('');
     const [imageUrl, setImageUrl] = useState('');
@@ -33,8 +31,13 @@ export default function ListingPage() {
                 setBreweryLink(ipa.breweryLink);
                 setCountry(ipa.country);
                 setRating(ipa.rating);
-
-                console.log(ipa);
             }
         })();
     }, [ipaId]);
+
+    return (
+        <div className='ipa-list__container'>
+            <h1>{ipaName}</h1>
+        </div>
+    );
+}

@@ -6,6 +6,8 @@ import * as sessionActions from './store/session';
 import Navigation from './components/Navigation';
 import HomePage from './components/HomePage'
 import ProfilePage from './components/ProfilePage';
+import IpaList from './components/IpaListPage';
+import IpaPage from './components/IpaPage/IpaPage';
 import Footer from './components/Footer'
 import './index.css'
 
@@ -29,6 +31,12 @@ function App() {
           </Route>
           <Route path='/profile'>
             <ProfilePage />
+          </Route>
+          <Route path='/ipas'>
+            <IpaList />
+          </Route>
+          <Route path='/ipas/:id'>
+            <IpaPage />
           </Route>
         </Switch>
       )}
