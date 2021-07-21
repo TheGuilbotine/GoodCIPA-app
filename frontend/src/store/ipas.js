@@ -86,10 +86,19 @@ const initialState = {
   list: []
 };
 
-const sortList = (list) => {
-  return list.sort((ipaA, ipaB) => {
-    return ipaA.ipaName - ipaB.ipaName;  //TODO check that this works
-  }).map((ipa) => ipa.id);
+const sortList = (ipas) => {
+
+  ipas.sort((a, b) => {
+    if (a.name > b.name) {
+      return 1;
+    }
+    if (a.name < b.name) {
+      return -1;
+    }
+    return 0;
+  });
+
+  return ipas.map(ipa => ipa.id);
 };
 
 const ipasReducer = (state = initialState, action) => {
