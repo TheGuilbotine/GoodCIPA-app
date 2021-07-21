@@ -1,7 +1,7 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
 const { check }  = require('express-validator');
-const { restoreUser, requireAuth } = require('../../utils/auth');
+const { requireAuth } = require('../../utils/auth');
 const { handleValidationErrors } = require('../../utils/validation');
 
 const { IPA, User} = require('../../db/models');
@@ -9,6 +9,9 @@ const { IPA, User} = require('../../db/models');
 const router = express.Router();
 
 const validateIpa = [
+    // check('userId')
+    // .exists({ checkFalsy: true })
+    // .withMessage('Must be signed in.'),
     check('name')
         .exists({ checkFalsy: true })
         .withMessage('Please add the name of your beer.')

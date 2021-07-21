@@ -29,7 +29,7 @@ export default function IpaList() {
     // }, []);
     const postData = {
         "userId": 1,
-        "name": "Wonderous Nico",
+        "name": "Nicoliciousness",
         "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.t1qZfee0hU7lBdBkpM7-VwHaHa%26pid%3DApi%26h%3D160&f=1",
         "brewery": "Open Gate Brewery",
         "breweryLink": "https://www.guinnessopengate.com/the-brewery",
