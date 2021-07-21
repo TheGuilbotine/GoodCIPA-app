@@ -14,7 +14,7 @@ function ProfilePage() {
                     Cracked Open
                 </NavLink>
                 <NavLink className='profile-page__ipas' to='/ipas'>
-                    IPAs
+                    IPA Beer Cave
                 </NavLink>
             </div>
             <div className='profile-content__container'>

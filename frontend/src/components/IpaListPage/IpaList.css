@@ -2,10 +2,6 @@
     margin-top: 33px;
 }
 
-.ipa-list__buttons__container {
-
-}
-
 .ipa-list__back {
     text-decoration: none;
     text-align: center;
@@ -28,7 +24,7 @@
     background-color: rgba(0, 0, 0, 0);
 }
 
-.ipa-list__ipa-link__container {
+.ipa-list__left {
     margin-top: 2px;
     padding: 7px;
     background-color: rgba(0, 0, 0, 0.7);
@@ -60,4 +56,38 @@
 .ipa-list__ipa-link__brewery {
     color: rgb(230, 171, 64);
     text-decoration: none;
+}
+
+.ipa-list__edit-button {
+    border: none;
+    border-radius: 11px;
+    text-decoration: none;
+    text-align: center;
+    text-shadow: rgb(184, 242, 245) 1px 0 10px;
+    color: rgb(130, 170, 36);
+    font-weight: 800;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.ipa-list__delete-button {
+    border: none;
+    border-radius: 11px;
+    text-decoration: none;
+    text-align: center;
+    text-shadow: rgb(184, 242, 245) 1px 0 10px;
+    color: rgb(245, 73, 6);
+    font-weight: 800;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.ipa-list__crud-buttons {
+    width: 11%;
+    margin-bottom: 11px;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    align-content: center;
+    border: 1px solid rgb(192, 128, 8);
+    border-radius: 11px;
 }
