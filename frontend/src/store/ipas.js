@@ -51,8 +51,8 @@ export const createIpa = payload => async dispatch => {
   const ipa = await response.json();
   if (response.ok) {
     dispatch(addOneIpa(ipa));
+    return response;
   }
-  return response;
 };
 
 export const destroyIpa = id => async dispatch => {

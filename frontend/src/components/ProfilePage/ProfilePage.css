@@ -1,11 +1,12 @@
 .profile-page__container {
     display: flex;
     justify-content: center;
+    /* width: 100%; */
 }
 
 .profile-buttons__container {
     width: 100%;
-    margin-top: 11px;
+    margin: 126px;
     display: flex;
     justify-content: space-around;
 }
@@ -13,27 +14,42 @@
 .profile-page__crackedopen {
     text-decoration: none;
     text-align: center;
-    text-shadow: rgb(184, 242, 245) 1px 0 10px;
+    text-shadow: rgb(221, 188, 1) 1px 0 10px;
     color: rgb(192, 128, 8);
     font-weight: 800;
     margin-left: 7px;
     background-color: rgba(0, 0, 0, 0.9);
     border-radius: 11px;
-    padding-right: 11px;
+    padding: 0 11px 3px;
     font-size: xx-large;
+    transition: 3s;
+}
+
+.profile-page__crackedopen:hover {
+    text-shadow: rgb(255, 255, 255) 1px 0 10px;
+    background-color: rgba(31, 14, 14, 0);
+    color: rgb(5, 53, 54);
 }
 
 .profile-page__ipas {
     text-decoration: none;
     text-align: center;
-    text-shadow: rgb(184, 242, 245) 1px 0 10px;
+    text-shadow: rgb(221, 188, 1) 1px 0 10px;
     color: rgb(192, 128, 8);
     font-weight: 800;
     margin-left: 7px;
     background-color: rgba(0, 0, 0, 0.9);
     border-radius: 11px;
-    padding-left: 11px;
+    padding: 0 11px;
     font-size: xx-large;
+    transition: 3s;
+}
+
+.profile-page__ipas:hover {
+    text-shadow: rgb(255, 255, 255) 1px 0 10px;
+    background-color: rgba(31, 14, 14, 0);
+    color: rgb(5, 53, 54);
+    /* font-size: 44px; */
 }
 
 .fridge {
