@@ -28,7 +28,7 @@ export default function CrackedOpen() {
                     +
                 </NavLink>
             </div>
-            {reviews.map(review => (
+            {reviews && reviews.map(review => (
                 <div className='review-list__review-link__container'>
                     <div className='review-list__left'>
                         <div className='review-list__review-link__image__container'>

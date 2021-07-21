@@ -1,7 +1,7 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
 const { check }  = require('express-validator');
-const { restoreUser } = require('../../utils/auth');
+const { restoreUser, requireAuth } = require('../../utils/auth');
 const { handleValidationErrors } = require('../../utils/validation');
 
 const { IPA, User} = require('../../db/models');
@@ -45,33 +45,38 @@ const validateIpa = [
     handleValidationErrors,
 ];
 
-router.get(':id(\\d+)', asyncHandler(async (req, res, next) => {
-    const id = parseInt(req.params.id);
+router.get('/:id(\\d+)', asyncHandler(async (req, res, next) => {
+    const id = req.params.id;
 
     try {
         const ipa = await IPA.findByPk(id,{
             include: [User]
         });
-        req.json(ipa);
+        res.json(ipa);
     } catch(err) {
         next(err);
     }
 }));
 
-router.get('/', asyncHandler(async (req, res, next) => {
-    try {
-        const ipas = await IPA.findAll({
-            include: [User]
-        });
-        res.json(ipas);
-    } catch (err) {
-        next(err);
-    }
-}));
+router.get(
+    '/',
+    asyncHandler(async (req, res, next) => {
+        try {
+            const ipas = await IPA.findAll({
+                include: [User]
+            });
+            res.json(ipas);
+        } catch (err) {
+            next(err);
+        }
+    }));
 
-router.post('/', validateIpa, restoreUser, asyncHandler( async (req, res, next) => {
-    const { name, imageUrl, brewery, breweryLink, description, country, rating, ABV } = req.body;
-    const userId = req.user.id;
+router.post(
+    '/',
+    validateIpa,
+    requireAuth,
+    asyncHandler( async (req, res, next) => {
+    const { userId, name, imageUrl, brewery, breweryLink, description, country, rating, ABV } = req.body;
 
     try {
         const newIpa = await IPA.create({
@@ -91,5 +96,36 @@ router.post('/', validateIpa, restoreUser, asyncHandler( async (req, res, next) 
         next(err);
     }
 }));
+
+router.put(
+    '/:id(\\d+)',
+    validateIpa,
+    requireAuth,
+    asyncHandler( async (req, res, next) => {
+        const id = req.params.id;
+        const ipa = await IPA.findByPk(id);
+        try {
+            const newIpa = await ipa.update(req.body);
+
+            res.json(newIpa);
+        } catch(err) {
+            next(err);
+        }
+    }));
+
+router.delete(
+    '/:id(\\d+)',
+    requireAuth,
+    asyncHandler(async (req, res, next) => {
+        const id = req.params.id;
+        const ipa = await IPA.findByPk(id);
+        try {
+            await ipa.destroy();
+
+            res.json(ipa);
+        } catch(err) {
+            next(err);
+        }
+    }));
 
 module.exports = router;

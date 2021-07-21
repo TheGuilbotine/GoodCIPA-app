@@ -1,8 +1,8 @@
-// import { LOAD_IPAS, REMOVE_IPA, ADD_IPA } from './items';
+import { csrfFetch } from "./csrf";
+
 
 export const LOAD_IPAS = 'ipas/LOAD_IPAS';
 export const REMOVE_IPA = 'ipas/REMOVE_IPA';
-export const UPDATE_IPA = 'ipas/UPDATE_IPA';
 export const ADD_ONE = 'ipas/ADD_ONE';
 
 const load = list => ({
@@ -15,17 +15,10 @@ const addOneIpa = ipa => ({
   ipa,
 });
 
-// const update = ipa => ({
-//     type: UPDATE_IPA,
-//     ipa,
-// });
-
-
-// const remove = (ipaId, userId) => ({
-//     type: REMOVE_IPA,
-//     ipaId,
-//     userId,
-// });
+const removeIpa = ipaId => ({
+    type: REMOVE_IPA,
+    ipaId,
+});
 
 export const getIpas = () => async dispatch => {
   const response = await fetch(`/api/ipas`);
@@ -33,6 +26,7 @@ export const getIpas = () => async dispatch => {
   if (response.ok) {
     const list = await response.json();
     dispatch(load(list));
+    // return list;
   }
 };
 
@@ -42,11 +36,12 @@ export const getOneIpa = id => async dispatch => {
   if (response.ok) {
     const ipa = await response.json();
     dispatch(addOneIpa(ipa));
+    // return ipa;
   }
 };
 
 export const createIpa = payload => async dispatch => {
-  const response = await fetch(`/api/ipas`, {
+  const response = await csrfFetch(`/api/ipas`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -59,9 +54,19 @@ export const createIpa = payload => async dispatch => {
     return ipa;
   }
 };
+export const destroyIpa = id => async dispatch => {
+  const response = await csrfFetch(`/api/ipas/${id}`, {
+    method: 'DELETE'
+  });
+  if (response.ok) {
+    const ipa = await response.json();
+    dispatch(removeIpa(id));
+    return ipa;
+  }
+};
 
 export const editIpa = (payload) => async dispatch => {
-    const response = await fetch(`/api/ipas/${payload.id}`, {
+    const response = await csrfFetch(`/api/ipas/${payload.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -81,7 +86,7 @@ const initialState = {
 
 const sortList = (list) => {
   return list.sort((ipaA, ipaB) => {
-    return ipaA.ipaName - ipaB.ipaName;
+    return ipaA.ipaName - ipaB.ipaName;  //TODO check that this works
   }).map((ipa) => ipa.id);
 };
 
@@ -98,12 +103,6 @@ const ipasReducer = (state = initialState, action) => {
         list: sortList(action.list),
       };
     }
-    // case LOAD_TYPES: {
-    //   return {
-    //     ...state,
-    //     types: action.types,
-    //   };
-    // }
     case ADD_ONE: {
       if (!state[action.ipa.id]) {
         const newState = {
@@ -123,35 +122,15 @@ const ipasReducer = (state = initialState, action) => {
         }
       };
     }
-    case LOAD_IPAS: {
-      return {
-        ...state,
-        [action.ipaId]: {
-          ...state[action.ipaId],
-          items: action.items.map(item => item.id),
-        }
-      };
-    }
     case REMOVE_IPA: {
-      return {
-        ...state,
-        [action.ipaId]: {
-          ...state[action.ipaId],
-          ipas: state[action.ipaId].filter(
-            (ipa) => ipa.id !== action.ipaId
-          ),
-        },
-      };
-    }
-    case ADD_ONE: {
-      console.log(action.item);
-      return {
-        ...state,
-        [action.item.ipaId]: {
-          ...state[action.item.ipaId],
-          items: [...state[action.item.ipaId], action.item.id],
-        },
-      };
+        const newState = {
+            ...state
+        };
+        const ipaList = newState.list.filter(ipaId => ipaId !== action.ipaId);
+        newState.list = ipaList;
+        delete newState[action.ipaId];
+
+        return newState;
     }
     default:
       return state;
