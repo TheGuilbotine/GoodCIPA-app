@@ -16,7 +16,6 @@ export default function CrackedOpen() {
             }
         })();
     }, []);
-    console.log('REVIEWS===>', reviews);
 
     return (
         <div className='review-list__container'>

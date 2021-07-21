@@ -33,8 +33,8 @@ export const getIpas = () => async dispatch => {
 export const getOneIpa = id => async dispatch => {
   const response = await fetch(`/api/ipas/${id}`);
 
+  const ipa = await response.json();
   if (response.ok) {
-    const ipa = await response.json();
     dispatch(addOneIpa(ipa));
     // return ipa;
   }
@@ -48,21 +48,23 @@ export const createIpa = payload => async dispatch => {
     },
     body: JSON.stringify(payload)
   });
+  const ipa = await response.json();
   if (response.ok) {
-    const ipa = await response.json();
     dispatch(addOneIpa(ipa));
-    return ipa;
   }
+  return response;
 };
+
 export const destroyIpa = id => async dispatch => {
   const response = await csrfFetch(`/api/ipas/${id}`, {
     method: 'DELETE'
   });
+  console.log('RESPONSE =====>', response, id)
   if (response.ok) {
-    const ipa = await response.json();
+    await response.json();
     dispatch(removeIpa(id));
-    return ipa;
   }
+  return response;
 };
 
 export const editIpa = (payload) => async dispatch => {
@@ -76,8 +78,8 @@ export const editIpa = (payload) => async dispatch => {
       if (response.ok) {
         const ipa = await response.json();
         dispatch(addOneIpa(ipa));
-        return ipa;
       }
+      return response;
 };
 
 const initialState = {

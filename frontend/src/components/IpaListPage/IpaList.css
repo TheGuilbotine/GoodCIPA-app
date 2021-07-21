@@ -69,6 +69,10 @@
     background-color: rgba(0, 0, 0, 0);
 }
 
+.ipa-list__edit-button:hover {
+    cursor: pointer;
+}
+
 .ipa-list__delete-button {
     border: none;
     border-radius: 11px;
@@ -78,6 +82,10 @@
     color: rgb(245, 73, 6);
     font-weight: 800;
     background-color: rgba(0, 0, 0, 0);
+}
+
+.ipa-list__delete-button:hover {
+    cursor: pointer;
 }
 
 .ipa-list__crud-buttons {

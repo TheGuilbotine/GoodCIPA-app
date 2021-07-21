@@ -2,9 +2,7 @@ import { useHistory } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-// import { createIpa } from '../../store/ipas';
 import * as ipaActions from '../../store/ipas';
-// import { createIpa, destroyIpa, editIpa, getIpas } from '../../store/ipas';
 import './AddIpa.css'
 
 const AddIpa = () => {
@@ -35,9 +33,7 @@ const AddIpa = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setErrors([]);
-        // const userId =
         const payload = {
-            // id,
             userId,
             name: ipaName,
             imageUrl,
@@ -49,16 +45,14 @@ const AddIpa = () => {
             ABV,
         };
         let createdIpa = await dispatch(ipaActions.createIpa(payload));
-            if (createdIpa) {
-                history.push(`/ipas`);
-            }
+        if (createdIpa) {
+            history.push(`/ipas`);
+        }
+        console.log('Errors?????', createdIpa.errors)
         // return dispatch(ipaActions.createIpa({ createdIpa })).catch(
         //     async (res) => {
         //       const data = await res.json();
         //       if (data && data.errors) setErrors(data.errors);
-        //       if (createdIpa) {
-        //         history.push(`/ipas`);
-        //         }
         //     })
     };
 
@@ -79,11 +73,11 @@ const AddIpa = () => {
                     </button>
                 </NavLink>
             </div>
-            <ul className='errors__container'>
+            {/* <ul className='errors__container'>
                 {errors.map((error, idx) => (
                     <li key={idx} className='errors'>{error}</li>
                 ))}
-            </ul>
+            </ul> */}
             <section className='new-form-holder centered middled'>
                 <form onSubmit={handleSubmit}>
                 <input

@@ -41,7 +41,7 @@ export default function IpaList() {
         "updatedAt": "2021-07-21T13:35:37.483Z",
         }
     const putData = {
-        'id': 29,
+        'id': 35,
         "userId": 1,
         "name": "Jesus Juice",
         "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.t1qZfee0hU7lBdBkpM7-VwHaHa%26pid%3DApi%26h%3D160&f=1",
@@ -63,8 +63,8 @@ export default function IpaList() {
         dispatch(editIpa(putData))
     }
 
-    const handleDestroy = () => {
-        dispatch(destroyIpa(29))
+    const handleDestroy = (id) => {
+        dispatch(destroyIpa(id))
     }
 
 
@@ -111,7 +111,7 @@ export default function IpaList() {
                     </div>
                     <div className='ipa-list__crud-buttons'>
                         <button className='ipa-list__edit-button'>EDIT</button>
-                        <button className='ipa-list__delete-button'>DELETE</button>
+                        <button onClick={destroyIpa(ipa.id)} className='ipa-list__delete-button'>DELETE</button>
                     </div>
                 </div>
             ))}

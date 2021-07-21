@@ -42,8 +42,8 @@ const restoreUser = (req, res, next) => {
             res.clearCookie('token');
             return next();
         }
-
-        if (!res.user) res.clearCookie('token');
+        // req not res!!!!!!!!!!!
+        if (!req.user) res.clearCookie('token');
 
         return next();
     });

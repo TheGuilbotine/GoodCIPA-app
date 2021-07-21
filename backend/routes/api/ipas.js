@@ -9,9 +9,6 @@ const { IPA, User} = require('../../db/models');
 const router = express.Router();
 
 const validateIpa = [
-    // check('userId')
-    // .exists({ checkFalsy: true })
-    // .withMessage('Must be signed in.'),
     check('name')
         .exists({ checkFalsy: true })
         .withMessage('Please add the name of your beer.')
@@ -81,23 +78,19 @@ router.post(
     asyncHandler( async (req, res, next) => {
     const { userId, name, imageUrl, brewery, breweryLink, description, country, rating, ABV } = req.body;
 
-    try {
-        const newIpa = await IPA.create({
-            userId,
-            name,
-            imageUrl,
-            brewery,
-            breweryLink,
-            description,
-            country,
-            rating,
-            ABV
-        });
+    const newIpa = await IPA.create({
+        userId,
+        name,
+        imageUrl,
+        brewery,
+        breweryLink,
+        description,
+        country,
+        rating,
+        ABV
+    });
+    return res.json(newIpa);
 
-        res.json(newIpa);
-    } catch(err) {
-        next(err);
-    }
 }));
 
 router.put(
@@ -120,7 +113,7 @@ router.delete(
     '/:id(\\d+)',
     requireAuth,
     asyncHandler(async (req, res, next) => {
-        const id = req.params.id;
+        const id = +req.params.id;
         const ipa = await IPA.findByPk(id);
         try {
             await ipa.destroy();
