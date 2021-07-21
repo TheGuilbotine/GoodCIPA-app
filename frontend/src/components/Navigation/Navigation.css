@@ -35,7 +35,7 @@ li {
 .nav__home-button__logo {
     height: 77px;
     border-radius: 50%;
-    transition: 3s;
+    transition: 3s ease-in-out;
 }
 
 .nav__home-button__logo:hover {
@@ -67,6 +67,54 @@ li {
 }
 
 .profile-button {
-    padding: 3px;
-    height: 20%;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.profile-button:hover {
+    cursor: pointer;
+}
+
+.fa-wine-bottle {
+    color: rgb(42, 69, 70);
+    /* height: 33px;
+    width: 33px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 33px;
+    border: none;
+    transition: 2s;
+    transform: rotate(-33deg);
+}
+
+.fa-wine-bottle:hover {
+    transform:rotate(55deg);
+}
+
+
+.profile-dropdown__user {
+    color: rgb(26, 59, 61);
+    font-weight: 800;
+}
+
+.profile-dropdown__email {
+    color: rgb(26, 59, 61);
+    font-weight: 800;
+}
+
+.profile-dropdown__logout {
+    margin-top: 7px;
+    text-decoration: none;
+    text-align: center;
+    text-shadow: rgb(184, 242, 245) 1px 0 10px;
+    color: rgb(26, 59, 61);
+    font-weight: 800;
+    align-self: center;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+.profile-dropdown__logout:hover {
+    cursor: pointer;
 }

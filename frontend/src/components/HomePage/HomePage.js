@@ -5,16 +5,21 @@ function HomePage() {
         <div className='splash-page__container'>
             <div className='splash-page__welcome'>
                 <h1 className='splash-page__text'>Welcome to GoodCIPA!</h1>
-                <p className='splash-page__text'>Drink ipa-lly!</p>
+                <p className='splash-page__text splash-page__text-paragraph'>Drink ipa-lly!</p>
                 <h2 className='splash-page__text'>Some people like beer, others love Indian Pale Ale.</h2>
+            </div>
+            <div className='good-cipa__image__container'>
+                <img className='splash-page__logo' src='https://i.imgur.com/xOksAty.png' alt='GoodCIPA Logo'/>
             </div>
             <div className='good-cipa'>
                 <h3 className='splash-page__text'>How to be a Good CIPA.</h3>
                 <p className='splash-page__text'>
-                    Add your favorite/next on your to drink list beers to your profile.
+                    Add IPAs to your Beer Cave.
+                    Crack Open and Review.
+                    {/* Add your favorite/next on your to drink list beers to your profile.
                     Crack-open and review IPAs you are out and about enjoying.
                     Search IPAs by, name, country, type, or brewery. Get out there and start being a
-                    Good Cold Indian Pale Ale sipper.
+                    Good Cold Indian Pale Ale sipper. */}
                 </p>
             </div>
             <div className='splash-page__search-bar'>

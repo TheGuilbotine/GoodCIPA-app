@@ -13,8 +13,7 @@ module.exports = {
         country: 'United States of America',
         rating: 6,
         ABV: 6.3,
-        createdAt: new Date(),
-        updatedAt: new Date(),
+
       },
       {
         userId: 1,
@@ -26,8 +25,7 @@ module.exports = {
         country: 'Netherlands',
         rating: 5.5,
         ABV: 6.5,
-        createdAt: new Date(),
-        updatedAt: new Date(),
+
       },
       {
         userId: 1,
@@ -39,8 +37,7 @@ module.exports = {
         country: 'France',
         rating: 5.5,
         ABV: 4.5,
-        createdAt: new Date(),
-        updatedAt: new Date(),
+
       },
       {
         userId: 1,
@@ -52,8 +49,7 @@ module.exports = {
         country: 'Neherlands',
         rating: 6.5,
         ABV: 6,
-        createdAt: new Date(),
-        updatedAt: new Date(),
+
       },
       {
         userId: 1,
@@ -65,8 +61,7 @@ module.exports = {
         country: 'Italy',
         rating: 5,
         ABV: 3.7,
-        createdAt: new Date(),
-        updatedAt: new Date(),
+
       },
       {
         userId: 1,
@@ -78,8 +73,7 @@ module.exports = {
         country: 'Belgium',
         rating: 5,
         ABV: 6.8,
-        createdAt: new Date(),
-        updatedAt: new Date(),
+
       },
       {
         userId: 1,
@@ -91,8 +85,7 @@ module.exports = {
         country: 'Spain',
         rating: 6.5,
         ABV: 6,
-        createdAt: new Date(),
-        updatedAt: new Date(),
+
       },
       {
         userId: 1,
@@ -104,8 +97,7 @@ module.exports = {
         country: 'England',
         rating: 6.5,
         ABV: 5.5,
-        createdAt: new Date(),
-        updatedAt: new Date(),
+
       },
       {
         userId: 1,
@@ -117,8 +109,7 @@ module.exports = {
         country: 'Denmark',
         rating: 6.5,
         ABV: 7.5,
-        createdAt: new Date(),
-        updatedAt: new Date(),
+
       },
       {
         userId: 1,
@@ -130,8 +121,7 @@ module.exports = {
         country: 'England',
         rating: 5,
         ABV: 8.1,
-        createdAt: new Date(),
-        updatedAt: new Date(),
+
       },
       {
         userId: 1,
@@ -143,8 +133,7 @@ module.exports = {
         country: 'England',
         rating: 5.5,
         ABV: 6.7,
-        createdAt: new Date(),
-        updatedAt: new Date(),
+
       },
       {
         userId: 1,
@@ -156,8 +145,7 @@ module.exports = {
         country: 'Norway',
         rating: 5.5,
         ABV: 10,
-        createdAt: new Date(),
-        updatedAt: new Date(),
+
       },
       {
         userId: 1,
@@ -169,8 +157,7 @@ module.exports = {
         country: 'Spain',
         rating: 6,
         ABV: 6.3,
-        createdAt: new Date(),
-        updatedAt: new Date(),
+
       },
       {
         userId: 1,
@@ -182,8 +169,7 @@ module.exports = {
         country: 'France',
         rating: 6,
         ABV: 4.7,
-        createdAt: new Date(),
-        updatedAt: new Date(),
+
       },
       {
         userId: 1,
@@ -195,8 +181,7 @@ module.exports = {
         country: 'Estonia',
         rating: 5.5,
         ABV: 5.6,
-        createdAt: new Date(),
-        updatedAt: new Date(),
+
       },
       {
         userId: 1,
@@ -208,8 +193,7 @@ module.exports = {
         country: 'France',
         rating: 6,
         ABV: 6.2,
-        createdAt: new Date(),
-        updatedAt: new Date(),
+
       },
       {
         userId: 1,
@@ -221,8 +205,7 @@ module.exports = {
         country: 'France',
         rating: 6.5,
         ABV: 5.6,
-        createdAt: new Date(),
-        updatedAt: new Date(),
+
       },
       {
         userId: 1,
@@ -234,8 +217,7 @@ module.exports = {
         country: 'France',
         rating: 6.5,
         ABV: 4.5,
-        createdAt: new Date(),
-        updatedAt: new Date(),
+
       },
       {
         userId: 1,
@@ -247,8 +229,7 @@ module.exports = {
         country: 'France',
         rating: 6.5,
         ABV: 6,
-        createdAt: new Date(),
-        updatedAt: new Date(),
+
       },
       {
         userId: 1,
@@ -260,8 +241,7 @@ module.exports = {
         country: 'France',
         rating: 5,
         ABV: 5,
-        createdAt: new Date(),
-        updatedAt: new Date(),
+
       },
       {
         userId: 1,
@@ -273,8 +253,7 @@ module.exports = {
         country: 'France',
         rating: 6.5,
         ABV: 6.3,
-        createdAt: new Date(),
-        updatedAt: new Date(),
+
       },
       {
         userId: 1,
@@ -286,8 +265,7 @@ module.exports = {
         country: 'France',
         rating: 6,
         ABV: 5.5,
-        createdAt: new Date(),
-        updatedAt: new Date(),
+
       },
       {
         userId: 1,
@@ -299,8 +277,7 @@ module.exports = {
         country: 'Northern Ireland',
         rating: 7.5,
         ABV: 6,
-        createdAt: new Date(),
-        updatedAt: new Date(),
+
       },
       {
         userId: 1,
@@ -312,8 +289,7 @@ module.exports = {
         country: 'Norway',
         rating: 8,
         ABV: 7.2,
-        createdAt: new Date(),
-        updatedAt: new Date(),
+
       },
       {
         userId: 1,
@@ -325,8 +301,7 @@ module.exports = {
         country: 'Northern Ireland',
         rating: 6.5,
         ABV: 4.3,
-        createdAt: new Date(),
-        updatedAt: new Date(),
+
       },
       {
         userId: 1,
@@ -338,8 +313,7 @@ module.exports = {
         country: 'England',
         rating: 5.5,
         ABV: 5.2,
-        createdAt: new Date(),
-        updatedAt: new Date(),
+
       },
       {
         userId: 1,
@@ -351,8 +325,7 @@ module.exports = {
         country: 'United States of America',
         rating: 6,
         ABV: 5,
-        createdAt: new Date(),
-        updatedAt: new Date(),
+
       },
     ], {});
 

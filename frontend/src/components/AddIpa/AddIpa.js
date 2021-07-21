@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { createIpa } from '../../store/ipas';
+import * as ipaActions from '../../store/ipas';
 import './AddIpa.css'
 
 const AddIpa = () => {
@@ -16,7 +17,8 @@ const AddIpa = () => {
     const [breweryLink, setBreweryLink] = useState('');
     const [country, setCountry] = useState('');
     const [rating, setRating] = useState(5);
-    const [ABV, setABV] = useState(0);
+    const [ABV, setABV] = useState(5.5);
+    const [errors, setErrors] = useState([]);
 
     // const updateUserId = (e) => setUserId(e.target.value);
     const updateIpaName = (e) => setIpaName(e.target.value);
@@ -30,7 +32,7 @@ const AddIpa = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+        setErrors([]);
         const payload = {
           userId,
           ipaName,
@@ -42,27 +44,37 @@ const AddIpa = () => {
           rating,
           ABV,
         };
-
         let createdIpa = await dispatch(createIpa(payload));
-        if (createdIpa) {
-          history.push(`/ipas`);
-        //   history.push(`/ipas/${createdIpa.id}`);
-        }
-      };
+        return dispatch(ipaActions.createIpa({ createdIpa })).catch(
+            async (res) => {
+              const data = await res.json();
+              if (data && data.errors) setErrors(data.errors);
+              if (createdIpa) {
+                history.push(`/ipas`);
+                }
+            })
+    };
+
 
       const handleCancelClick = (e) => {
         e.preventDefault();
+        history.push('/ipas')
       };
 
     return (
         <div className='add-ipa__form__container'>
             <div className='add-ipa__buttons__container'>
-            <NavLink to='/profile'>
-                <button className='add-ipa__buttons__back'>
-                    Back
-                </button>
-            </NavLink>
-        </div>
+                <NavLink to='/profile'>
+                    <button className='add-ipa__buttons__back'>
+                        Back
+                    </button>
+                </NavLink>
+            </div>
+            <ul className='errors__container'>
+                {errors.map((error, idx) => (
+                    <li key={idx} className='errors'>{error}</li>
+                ))}
+            </ul>
             <section className='new-form-holder centered middled'>
                 <form onSubmit={handleSubmit}>
                 <input

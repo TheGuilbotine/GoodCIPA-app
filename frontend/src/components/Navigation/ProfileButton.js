@@ -41,14 +41,16 @@ function ProfileButton({ user }) {
   return (
     <>
       <button className='profile-button' onClick={openMenu}>
-        <i className="fab fa-old-republic" />
+        <i className="fas fa-wine-bottle"></i>
+        Profile
+        {/* <i className="fab fa-old-republic" /> */}
       </button>
       {showMenu && (
         <ul className='profile-dropdown'>
-          <li>{user.username}</li>
-          <li>{user.email}</li>
+          <li className='profile-dropdown__user'>{user.username}</li>
+          <li className='profile-dropdown__email'>{user.email}</li>
           <li>
-            <button onClick={logout}>Log Out</button>
+            <button className='profile-dropdown__logout' onClick={logout}>Log Out</button>
           </li>
         </ul>
       )}

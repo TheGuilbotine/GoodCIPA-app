@@ -3,12 +3,30 @@
     text-align: center;
 }
 
+.splash-page__text-paragraph {
+    font-size: larger;
+}
+
 .splash-page__welcome {
     margin-top: 33px;
     margin-bottom: 22px;
     border: 1px solid rgb(192, 128, 8);
     border-radius: 11px;
     background-color: rgba(0, 0, 0, 0.7);
+}
+
+.good-cipa__image__container {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgb(192, 128, 8);
+    border-radius: 11px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 44px;
+    padding: 83px 145px;
+}
+
+.splash-page__logo {
+    border-radius: 11px;
 }
 
 .good-cipa {
@@ -32,7 +50,15 @@
     height: 33px;
     margin: 22px;
     padding: 3px;
+    border-radius: 11px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgb(192, 128, 8);
+    color: bisque;
 }
+
+/* .splash-page__search:target {
+    border: rgb(255, 241, 40);
+} */
 
 .splash-page-link {
     font-size: larger;
