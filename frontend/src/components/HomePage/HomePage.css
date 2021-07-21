@@ -3,6 +3,10 @@
     text-align: center;
 }
 
+.splash-page__text-paragraph {
+    font-size: larger;
+}
+
 .splash-page__welcome {
     margin-top: 33px;
     margin-bottom: 22px;

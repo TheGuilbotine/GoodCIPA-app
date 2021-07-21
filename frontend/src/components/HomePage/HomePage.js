@@ -5,7 +5,7 @@ function HomePage() {
         <div className='splash-page__container'>
             <div className='splash-page__welcome'>
                 <h1 className='splash-page__text'>Welcome to GoodCIPA!</h1>
-                <p className='splash-page__text'>Drink ipa-lly!</p>
+                <p className='splash-page__text splash-page__text-paragraph'>Drink ipa-lly!</p>
                 <h2 className='splash-page__text'>Some people like beer, others love Indian Pale Ale.</h2>
             </div>
             <div className='good-cipa__image__container'>

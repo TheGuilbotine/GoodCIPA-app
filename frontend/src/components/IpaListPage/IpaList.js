@@ -21,15 +21,11 @@ export default function IpaList() {
     return (
         <div className='ipa-list__container'>
             <div className='ipa-list__buttons__container'>
-                <NavLink to='/profile'>
-                    <button className='ipa-list__buttons__back'>
-                        Back
-                    </button>
+                <NavLink className='ipa-list__back' to='/profile'>
+                    Back
                 </NavLink>
-                <NavLink to='/new-ipa'>
-                    <button className='ipa-list__add-ipa'>
-                        +
-                    </button>
+                <NavLink className='ipa-list__add-ipa' to='/new-ipa'>
+                    +
                 </NavLink>
             </div>
             {ipas.map(ipa => (

@@ -21,12 +21,12 @@ export default function CrackedOpen() {
     return (
         <div className='review-list__container'>
             <div className='review-list__buttons__container'>
-                <NavLink to='/profile'>
-                    <button className='review-list__buttons__back'>
-                        Back
-                    </button>
+                <NavLink className='review-list__back' to='/profile'>
+                    Back
                 </NavLink>
-                <button className='review-list__add-review'>+</button>
+                <NavLink className='review-list__add' to='/crack-open'>
+                    +
+                </NavLink>
             </div>
             {reviews.map(review => (
                 <div className='review-list__review-link__container'>
