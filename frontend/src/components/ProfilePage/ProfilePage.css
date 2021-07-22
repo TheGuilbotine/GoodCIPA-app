@@ -1,30 +1,84 @@
 .profile-page__container {
+    height: 77%;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    /* width: 100%; */
+}
+
+.profile-page__text {
+    text-align: center;
+    text-shadow: rgb(221, 188, 1) 1px 0 10px;
+    color: rgb(192, 128, 8);
+    font-weight: 800;
 }
 
 .profile-buttons__container {
-    margin-top: 11px;
+    width: 100%;
+    /* height: fit-content; */
+    display: flex;
+    justify-content: space-around;
 }
 
 .profile-page__crackedopen {
     text-decoration: none;
     text-align: center;
-    text-shadow: rgb(184, 242, 245) 1px 0 10px;
+    text-shadow: rgb(221, 188, 1) 1px 0 10px;
     color: rgb(192, 128, 8);
     font-weight: 800;
     margin-left: 7px;
-    background-color: rgba(0, 0, 0, 0);
-    padding-right: 11px;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 11px;
+    padding: 0 11px 3px;
+    font-size: xx-large;
+    transition: 3s;
+}
+
+.profile-page__crackedopen:hover {
+    text-shadow: rgb(255, 255, 255) 1px 0 10px;
+    background-color: rgba(31, 14, 14, 0);
+    color: rgb(5, 53, 54);
 }
 
 .profile-page__ipas {
     text-decoration: none;
     text-align: center;
-    text-shadow: rgb(184, 242, 245) 1px 0 10px;
+    text-shadow: rgb(221, 188, 1) 1px 0 10px;
     color: rgb(192, 128, 8);
     font-weight: 800;
     margin-left: 7px;
-    background-color: rgba(0, 0, 0, 0);
-    padding-left: 11px;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 11px;
+    padding: 0 11px;
+    font-size: xx-large;
+    transition: 3s;
+}
+
+.profile-page__ipas:hover {
+    text-shadow: rgb(255, 255, 255) 1px 0 10px;
+    background-color: rgba(31, 14, 14, 0);
+    color: rgb(5, 53, 54);
+    /* font-size: 44px; */
+}
+
+.fridge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 44px;
+    height: 511px;
+    width: 299px;
+    background-size: cover;
+    background-image: url('../images/fridge.jpg');
+}
+
+.cellar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 44px;
+    height: 511px;
+    width: 299px;
+    background-size: cover;
+    background-image: url('../images/cellar.png')
 }

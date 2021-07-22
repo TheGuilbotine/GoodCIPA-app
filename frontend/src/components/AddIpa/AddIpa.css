@@ -1,0 +1,90 @@
+.add-ipa__form-container {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.add-ipa__buttons__back {
+    background-color: rgba(0, 0, 0, 0);
+    text-decoration: none;
+}
+
+.fa-arrow-circle-left {
+    margin-top: 22px;
+    border: none;
+    font-size: 44px;
+    color: rgb(10, 91, 95);
+    text-shadow: rgb(221, 188, 1) 1px 0 10px;
+}
+
+.fa-arrow-circle-left:hover {
+    cursor: pointer;
+}
+
+.add-ipa__text {
+    color: rgb(192, 128, 8);
+    border: 1px solid rgb(192, 128, 8);
+    border-radius: 11px;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 3px;
+}
+
+.add-ipa__form {
+    align-self: center;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(192, 128, 8);
+    border-radius: 11px;
+    height: 500px;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.add-ipa__element-container {
+    margin-bottom: 7px;
+    display: flex;
+
+}
+
+.add-ipa__input-container {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 4px;
+}
+
+.add-ipa__input {
+    border: 0;
+    border-radius: 3px;
+}
+
+.create-button {
+    margin-top: 7px;
+    border: 0;
+    text-decoration: underline;
+    color: rgb(192, 128, 8);
+    font-size: larger;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.create-button:hover {
+    cursor: pointer;
+}
+
+.cancel-button {
+    border: 0;
+    text-decoration: underline;
+    color: rgb(192, 128, 8);
+    font-size: larger;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.cancel-button:hover {
+    cursor:pointer;
+}

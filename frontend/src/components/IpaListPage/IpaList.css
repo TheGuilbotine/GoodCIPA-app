@@ -2,6 +2,11 @@
     margin-top: 33px;
 }
 
+.ipa-list__buttons__container {
+    display: flex;
+    flex-direction: column;
+}
+
 .ipa-list__back {
     text-decoration: none;
     text-align: center;
@@ -14,14 +19,23 @@
 }
 
 .ipa-list__add-ipa {
-    font-size: xX-large;
+    /* font-size: xX-large; */
     text-decoration: none;
-    text-align: center;
+    align-self: center;
+    /* text-align: center;
     text-shadow: rgb(184, 242, 245) 1px 0 10px;
     color: rgb(192, 128, 8);
     font-weight: 800;
     margin-left: 7px;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0); */
+}
+
+.fa-plus {
+    /* margin-top: 22px; */
+    border: none;
+    font-size: 44px;
+    color: rgb(10, 91, 95);
+    text-shadow: rgb(221, 188, 1) 1px 5px 10px;
 }
 
 .ipa-list__left {

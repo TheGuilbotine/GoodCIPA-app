@@ -89,7 +89,7 @@ li {
     align-items: center;
     font-size: 33px;
     border: none;
-    transition: 2s;
+    transition: 2s ease-in;
     transform: rotate(-33deg);
 }
 
