@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { csrfFetch } from '../../store/csrf';
+import { useHistory } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { createIpa, destroyIpa, editIpa, getIpas } from '../../store/ipas';
 import './IpaList.css';
 
 
 export default function IpaList() {
+    const history = useHistory();
     const [ipaList, setIpaList] = useState([]);
     const dispatch = useDispatch();
     const ipas =useSelector((state) => {
@@ -110,7 +112,11 @@ export default function IpaList() {
                         </div>
                     </div>
                     <div className='ipa-list__crud-buttons'>
-                        <button className='ipa-list__edit-button'>EDIT</button>
+                        <button className='ipa-list__edit-button'>
+                            <NavLink className='ipa-list__edit-button' to={`/edit-ipa/${ipa.id}`}>
+                                EDIT
+                            </NavLink>
+                        </button>
                         <button onClick={() => dispatch(destroyIpa(ipa.id))} className='ipa-list__delete-button'>DELETE</button>
                     </div>
                 </div>
