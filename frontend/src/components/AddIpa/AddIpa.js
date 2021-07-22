@@ -69,7 +69,7 @@ const AddIpa = () => {
         <div className='add-ipa__form-container'>
             <div className='add-ipa__buttons__container'>
                 <NavLink className='add-ipa__buttons__back' to='/ipas'>
-                    <i class="fas fa-arrow-circle-left"></i>
+                    <i className="fas fa-arrow-circle-left"/>
                 </NavLink>
             </div>
             <ul className='errors__container'>

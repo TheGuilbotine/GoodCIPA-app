@@ -72,10 +72,10 @@ export default function IpaList() {
         <div className='ipa-list__container'>
             <div className='ipa-list__buttons__container'>
                 <NavLink className='ipa-list__back' to='/profile'>
-                    Back
+                    <i className="fas fa-arrow-circle-left"/>
                 </NavLink>
                 <NavLink className='ipa-list__add-ipa' to='/new-ipa'>
-                    +
+                    <i className="fas fa-plus"/>
                 </NavLink>
             </div>
             <div>
