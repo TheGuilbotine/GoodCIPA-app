@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { csrfFetch } from '../../store/csrf';
-import { destroyCO, getCOs } from '../../store/reviews';
+import { destroyCO } from '../../store/reviews';
 import './CrackedOpen.css';
 
 export default function CrackedOpen() {
@@ -39,7 +39,7 @@ export default function CrackedOpen() {
                 </NavLink> */}
             </div>
             {reviews && reviews.map(review => (
-                <div className='review-list__review-link__container'>
+                <div key={review.id}className='review-list__review-link__container'>
                     <div className='review-list__left'>
                         <div className='review-list__review-link__image__container'>
                             <NavLink to={`/reviews/${review.id}`} key={review.id} className='review-list__review-link__image'>

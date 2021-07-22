@@ -1,5 +1,5 @@
 import { useHistory, useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { createCO } from '../../store/reviews';
@@ -66,8 +66,8 @@ export default function CrackOpen() {
                             <div className='add-comment__input-container'>
                                 <input
                                     className='add-comment__input'
-                                    // TODO Add beer name
-                                    placeholder={`How was your ${beer.name} ${beer.User.username}`}
+                                    // TODO Add ${beer.User.username}
+                                    placeholder={`How was your ${beer.name}`}
                                     type='text'
                                     value={comment}
                                     onChange={updateComment}
