@@ -6,12 +6,12 @@ const { setTokenCookie, restoreUser, requireAuth } = require('../../utils/auth.j
 const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
 const ipasRouter = require('./ipas.js');
-// const crackOpensRouter = require('./crackOpens.js');
+const crackOpensRouter = require('./crackOpens.js');
 
 router.use('/session', sessionRouter);
 router.use('/users', usersRouter);
 router.use('/ipas', ipasRouter);
-// router.use('/cracked-open', crackOpensRouter);
+router.use('/cracked-open', crackOpensRouter);
 
 // router.get(
 //   '/restore-user',

@@ -59,7 +59,7 @@ export default function IpaList() {
         dispatch(createIpa(postData))
     }
 
-    const handlePut = () => {
+    const handlePut = (putData) => {
         dispatch(editIpa(putData))
     }
 
@@ -79,9 +79,9 @@ export default function IpaList() {
                 </NavLink>
             </div>
             <div>
-                <button  onClick={handlePost}>POST</button>
+                {/* <button  onClick={handlePost}>POST</button> */}
                 <button onClick={handlePut}>PUT</button>
-                <button onClick={handleDestroy}>DESTROY</button>
+                {/* <button onClick={handleDestroy}>DESTROY</button> */}
             </div>
             {ipas && ipas.map(ipa => (
                 // TODO add description to the right of the div
@@ -111,7 +111,7 @@ export default function IpaList() {
                     </div>
                     <div className='ipa-list__crud-buttons'>
                         <button className='ipa-list__edit-button'>EDIT</button>
-                        <button onClick={destroyIpa(ipa.id)} className='ipa-list__delete-button'>DELETE</button>
+                        <button onClick={() => dispatch(destroyIpa(ipa.id))} className='ipa-list__delete-button'>DELETE</button>
                     </div>
                 </div>
             ))}

@@ -47,6 +47,7 @@ const AddIpa = () => {
         let createdIpa = await dispatch(ipaActions.createIpa(payload));
         if (createdIpa) {
             history.push(`/ipas`);
+            setErrors(createdIpa.errors)
         }
         console.log('Errors?????', createdIpa.errors)
         // return dispatch(ipaActions.createIpa({ createdIpa })).catch(
@@ -65,75 +66,142 @@ const AddIpa = () => {
     };
 
     return (
-        <div className='add-ipa__form__container'>
+        <div className='add-ipa__form-container'>
             <div className='add-ipa__buttons__container'>
-                <NavLink to='/profile'>
-                    <button className='add-ipa__buttons__back'>
-                        Back
-                    </button>
+                <NavLink className='add-ipa__buttons__back' to='/ipas'>
+                    <i class="fas fa-arrow-circle-left"></i>
                 </NavLink>
             </div>
-            {/* <ul className='errors__container'>
+            <ul className='errors__container'>
                 {errors.map((error, idx) => (
                     <li key={idx} className='errors'>{error}</li>
                 ))}
-            </ul> */}
-            <section className='new-form-holder centered middled'>
+            </ul>
+            <section className='add-ipa__form'>
+                <h1 className='add-ipa__text'>Add to your Beer Cave</h1>
                 <form onSubmit={handleSubmit}>
-                <input
-                    type='text'
-                    placeholder='Beer Name'
-                    required
-                    value={ipaName}
-                    onChange={updateIpaName} />
-                <input
-                    type='text'
-                    placeholder='Image URL'
-                    required
-                    value={imageUrl}
-                    onChange={updateImageUrl} />
-                <input
-                    type='text'
-                    placeholder='Description'
-                    required
-                    value={description}
-                    onChange={updateDescription} />
-                <input
-                    type='text'
-                    placeholder='Brewery'
-                    value={brewery}
-                    onChange={updateBrewery} />
-                <input
-                    type='text'
-                    placeholder='Brewery URL Link'
-                    value={breweryLink}
-                    onChange={updateBreweryLink} />
-                <input
-                    type='text'
-                    placeholder='Country'
-                    value={country}
-                    onChange={updateCountry} />
-                <label for='rating'>Rating</label>
-                <input
-                    name='rating'
-                    type='number'
-                    step='0.5'
-                    min='1'
-                    max='10'
-                    value={rating}
-                    onChange={updateRating} />
-                <label for='abv'>ABV</label>
-                <input
-                    name='abv'
-                    type='number'
-                    step='0.1'
-                    min='0'
-                    max='20'
-                    placeholder='ABV'
-                    value={ABV}
-                    onChange={updateABV} />
-                <button type='submit'>Create new IPA</button>
-                <button type='button' onClick={handleCancelClick}>Cancel</button>
+                    <div className='add_ipa__element-container'>
+                        <i className='fas fa-beer'>
+                            <div className='add-ipa__input-container'>
+                                <input
+                                    className='add-ipa__input'
+                                    placeholder='Beer Name'
+                                    type='text'
+                                    value={ipaName}
+                                    onChange={updateIpaName}
+                                    required
+                                />
+                            </div>
+                        </i>
+                    </div>
+                    <div className='add_ipa__element-container'>
+                        <i className="fas fa-camera-retro">
+                            <div className='add-ipa__input-container'>
+                                <input
+                                    className='add-ipa__input'
+                                    placeholder='Image URL'
+                                    type='text'
+                                    value={imageUrl}
+                                    onChange={updateImageUrl}
+                                    required
+                                />
+                            </div>
+                        </i>
+                    </div>
+                    <div className='add_ipa__element-container'>
+                        <i className="fas fa-pencil-alt">
+                            <div className='add-ipa__input-container'>
+                                <input
+                                    className='add-ipa__input'
+                                    placeholder='Description'
+                                    type='text'
+                                    value={description}
+                                    onChange={updateDescription}
+                                    required
+                                />
+                            </div>
+                        </i>
+                    </div>
+                    <div className='add_ipa__element-container'>
+                        <i className="fas fa-industry">
+                            <div className='add-ipa__input-container'>
+                                <input
+                                    className='add-ipa__input'
+                                    placeholder='Brewery'
+                                    type='text'
+                                    value={brewery}
+                                    onChange={updateBrewery}
+                                    required
+                                />
+                            </div>
+                        </i>
+                    </div>
+                    <div className='add_ipa__element-container'>
+                        <i className="fas fa-globe">
+                            <div className='add-ipa__input-container'>
+                                <input
+                                    className='add-ipa__input'
+                                    placeholder='Brewery URL Link'
+                                    type='text'
+                                    value={breweryLink}
+                                    onChange={updateBreweryLink}
+                                />
+                            </div>
+                        </i>
+                    </div>
+                    <div className='add_ipa__element-container'>
+                        <i className="fas fa-globe-africa">
+                            <div className='add-ipa__input-container'>
+                                <input
+                                    className='add-ipa__input'
+                                    placeholder='Country'
+                                    type='text'
+                                    value={country}
+                                    onChange={updateCountry}
+                                    required
+                                />
+                            </div>
+                        </i>
+                    </div>
+                    <div className='add_ipa__element-container'>
+                        <i className="fas fa-star">
+                        <label for='rating'>Rating</label>
+                            <div className='add-ipa__input-container'>
+                                <input
+                                    className='add-ipa__input'
+                                    name='rating'
+                                    type='number'
+                                    step='0.5'
+                                    min='1'
+                                    max='10'
+                                    value={rating}
+                                    onChange={updateRating}
+                                    required
+                                />
+                            </div>
+                        </i>
+                    </div>
+                    <div className='add_ipa__element-container'>
+                        <i className="fas fa-percent">
+                        <label for='abv'>ABV</label>
+                            <div className='add-ipa__input-container'>
+                                <input
+                                    className='add-ipa__input'
+                                    name='abv'
+                                    type='number'
+                                    step='0.1'
+                                    min='0'
+                                    max='20'
+                                    placeholder='ABV'
+                                    value={ABV}
+                                    onChange={updateABV}
+                                    required
+                                />
+                            </div>
+                        </i>
+                    </div>
+                <button className='create-button' type='submit'>Stock new IPA</button>
+                <button className='cancel-button' type='button' onClick={handleCancelClick}>Cancel</button>
                 </form>
             </section>
         </div>

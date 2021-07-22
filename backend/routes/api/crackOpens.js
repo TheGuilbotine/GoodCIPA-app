@@ -1,104 +1,90 @@
-// const express = require('express');
-// const asyncHandler = require('express-async-handler');
-// const { check }  = require('express-validator');
-// const { requireAuth } = require('../../utils/auth');
-// const { handleValidationErrors } = require('../../utils/validation');
+const express = require('express');
+const asyncHandler = require('express-async-handler');
+const { check }  = require('express-validator');
+const { requireAuth } = require('../../utils/auth');
+const { handleValidationErrors } = require('../../utils/validation');
 
-// const { IPA, User, CrackOpen} = require('../../db/models');
+const { IPA, User, CrackOpen} = require('../../db/models');
 
-// const router = express.Router();
+const router = express.Router();
 
-// const validateReview = [
-//     check('comment')
-//         .exists({ checkFalsy: true })
-//         .withMessage('Please add the name of your review of the beer.'),
-//     handleValidationErrors,
-// ];
+const validateReview = [
+    check('comment')
+        .exists({ checkFalsy: true })
+        .withMessage('Please add your review of the beer.'),
+    handleValidationErrors,
+];
 
-// router.get('/:id(\\d+)', asyncHandler(async (req, res, next) => {
-//     const id = req.params.id;
+router.get('/:id(\\d+)', asyncHandler(async (req, res, next) => {
+    const id = req.params.id;
 
-//     try {
-//         const ipa = await IPA.findByPk(id,{
-//             include: [User]
-//         });
-//         res.json(ipa);
-//     } catch(err) {
-//         next(err);
-//     }
-// }));
+    try {
+        const review = await CrackOpen.findByPk(id,{
+            include: [User, IPA]
+        });
+        res.json(review);
+    } catch(err) {
+        next(err);
+    }
+}));
 
-// router.get(
-//     '/',
-//     asyncHandler(async (req, res, next) => {
-//         try {
-//             const ipas = await IPA.findAll({
-//                 include: [User]
-//             });
-//             res.json(ipas);
-//         } catch (err) {
-//             next(err);
-//         }
-//     }));
+router.get(
+    '/',
+    asyncHandler(async (req, res, next) => {
+        try {
+            const reviews = await CrackOpen.findAll({
+                include: [User, IPA]
+            });
+            res.json(reviews);
+        } catch (err) {
+            next(err);
+        }
+    }));
 
-// router.post(
-//     '/',
-//     validateReview,
-//     requireAuth,
-//     asyncHandler( async (req, res, next) => {
-//     const { userId, name, imageUrl, brewery, breweryLink, description, country, rating, ABV } = req.body;
+router.post(
+    '/',
+    validateReview,
+    requireAuth,
+    asyncHandler( async (req, res, next) => {
+    const { userId, ipaId, comment } = req.body;
 
-//     try {
-//         const newIpa = await IPA.create({
-//             userId,
-//             name,
-//             imageUrl,
-//             brewery,
-//             breweryLink,
-//             description,
-//             country,
-//             rating,
-//             ABV
-//         });
 
-//         res.json(newIpa);
-//     } catch(err) {
-//         next(err);
-//     }
-// }));
+    const newReview = await CrackOpen.create({
+        userId,
+        ipaId,
+        comment
+    });
 
-// router.put(
-//     '/:id(\\d+)',
-//     validateReview,
-//     requireAuth,
-//     asyncHandler( async (req, res, next) => {
-//         const id = req.params.id;
-//         const ipa = await IPA.findByPk(id);
-//         try {
-//             const newIpa = await ipa.update(req.body);
+    return res.json(newReview);
+}));
 
-//             res.json(newIpa);
-//         } catch(err) {
-//             next(err);
-//         }
-//     }));
+router.put(
+    '/:id(\\d+)',
+    validateReview,
+    requireAuth,
+    asyncHandler( async (req, res, next) => {
+        const id = req.params.id;
+        const review = await CrackOpen.findByPk(id);
 
-// router.delete(
-//     '/:id(\\d+)',
-//     requireAuth,
-//     asyncHandler(async (req, res, next) => {
-//         const id = req.params.id;
-//         const ipa = await IPA.findByPk(id);
-//         try {
-//             await ipa.destroy();
+        const newReview = await review.update(req.body);
 
-//             res.json(ipa);
-//         } catch(err) {
-//             next(err);
-//         }
-//     }));
+        return res.json(newReview);
+    }));
 
-// module.exports = router;
+router.delete(
+    '/:id(\\d+)',
+    requireAuth,
+    asyncHandler(async (req, res, next) => {
+        const id = req.params.id;
+        const review = await CrackOpen.findByPk(id);
+        if (review) {
+            await review.destroy();
+        }
+
+        return res.json(review);
+    }));
+
+module.exports = router;
 
 // OLD
 
