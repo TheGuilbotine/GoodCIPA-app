@@ -1,31 +1,42 @@
 import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { csrfFetch } from '../../store/csrf';
+import { destroyCO, getCOs } from '../../store/reviews';
 import './CrackedOpen.css';
 
 export default function CrackedOpen() {
     const [reviews, setReviews] = useState([]);
+    const dispatch = useDispatch();
 
+    const sortList = (cos) => {
+        return cos.sort((a, b) => {
+            return b.id - a.id
+        });
+    };
+
+    // TODO get rerender on delete!!!
     useEffect(() => {
+        // dispatch(getCOs())
         (async function() {
             const res = await csrfFetch('/api/cracked-open');
 
             if(res.ok) {
                 const newReviews = await res.json();
-                setReviews(newReviews);
+                setReviews(sortList(newReviews));
             }
         })();
-    }, []);
+    }, [dispatch]);
 
     return (
         <div className='review-list__container'>
             <div className='review-list__buttons__container'>
                 <NavLink className='review-list__back' to='/profile'>
-                    Back
+                    <i className="fas fa-arrow-circle-left"/>
                 </NavLink>
-                <NavLink className='review-list__add' to='/crack-open'>
+                {/* <NavLink className='review-list__add' to='/crack-open'>
                     +
-                </NavLink>
+                </NavLink> */}
             </div>
             {reviews && reviews.map(review => (
                 <div className='review-list__review-link__container'>
@@ -47,8 +58,13 @@ export default function CrackedOpen() {
                         </div>
                     </div>
                     <div className='review-list__crud-buttons'>
-                        <button className='review-list__edit-button'>EDIT</button>
-                        <button className='review-list__delete-button'>DELETE</button>
+                        <button className='review-list__edit-button'>
+                            <NavLink className='review-list__edit-button' to={`/edit-cracked-open/${review.id}`}>
+                                EDIT
+                            </NavLink>
+                        </button>
+                        {/* // TODO get rerender on delete!!! */}
+                        <button onClick={() => dispatch(destroyCO(review.id))} className='review-list__delete-button'>DELETE</button>
                     </div>
                 </div>
             ))}

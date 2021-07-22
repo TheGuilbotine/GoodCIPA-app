@@ -11,7 +11,7 @@ export default function IpaList() {
     const history = useHistory();
     const [ipaList, setIpaList] = useState([]);
     const dispatch = useDispatch();
-    const ipas =useSelector((state) => {
+    const ipas = useSelector((state) => {
         return state.ipas.list.map(ipaId => state.ipas[ipaId]);
     });
 
@@ -118,6 +118,11 @@ export default function IpaList() {
                             </NavLink>
                         </button>
                         <button onClick={() => dispatch(destroyIpa(ipa.id))} className='ipa-list__delete-button'>DELETE</button>
+                        <button className='crack-open__button'>
+                            <NavLink class='crack-open__button' to={`/crack-open/${ipa.id}`}>
+                                Crack Open
+                            </NavLink>
+                        </button>
                     </div>
                 </div>
             ))}

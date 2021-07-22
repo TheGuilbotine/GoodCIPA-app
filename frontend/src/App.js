@@ -11,6 +11,8 @@ import IpaPage from './components/IpaPage/IpaPage';
 import CrackedOpen from './components/CrackedOpen';
 import AddIpa from './components/AddIpa';
 import EditIpa from './components/EditIpa/EditIpa';
+import CrackOpen from './components/CrackOpen';
+import EditCrackedOpen from './components/EditCrackedOpen/EditCrackedOpen';
 import Footer from './components/Footer';
 import './index.css';
 
@@ -46,6 +48,12 @@ function App() {
           </Route>
           <Route path='/cracked-open'>
             <CrackedOpen />
+          </Route>
+          <Route path='/crack-open/:id'>
+            <CrackOpen />
+          </Route>
+          <Route paht='/edit-cracked-open/:id'>
+            <EditCrackedOpen />
           </Route>
           <Route path='/ipas/:id(\\d)'>
             <IpaPage />

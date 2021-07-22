@@ -1,140 +1,142 @@
-// import { csrfFetch } from "./csrf";
+import { csrfFetch } from "./csrf";
 
 
-// export const LOAD_IPAS = 'ipas/LOAD_IPAS';
-// export const REMOVE_IPA = 'ipas/REMOVE_IPA';
-// export const ADD_ONE = 'ipas/ADD_ONE';
+export const LOAD_COS = 'cos/LOAD_COS';
+export const REMOVE_CO = 'cos/REMOVE_CO';
+export const ADD_ONE = 'cos/ADD_ONE';
 
-// const load = list => ({
-//   type: LOAD_IPAS,
-//   list,
-// });
+const load = list => ({
+  type: LOAD_COS,
+  list,
+});
 
-// const addOneIpa = ipa => ({
-//   type: ADD_ONE,
-//   ipa,
-// });
+const addOneCO = co => ({
+  type: ADD_ONE,
+  co,
+});
 
-// const removeIpa = ipaId => ({
-//     type: REMOVE_IPA,
-//     ipaId,
-// });
+const removeCO = coId => ({
+    type: REMOVE_CO,
+    coId,
+});
 
-// export const getIpas = () => async dispatch => {
-//   const response = await fetch(`/api/ipas`);
+export const getCOs = () => async dispatch => {
+  const response = await fetch(`/api/cracked-open`);
 
-//   if (response.ok) {
-//     const list = await response.json();
-//     dispatch(load(list));
-//     // return list;
-//   }
-// };
+  if (response.ok) {
+    const list = await response.json();
+    dispatch(load(list));
+    // return list;
+  }
+};
 
-// export const getOneIpa = id => async dispatch => {
-//   const response = await fetch(`/api/ipas/${id}`);
+export const getOneCO = id => async dispatch => {
+  const response = await fetch(`/api/cracked-open/${id}`);
 
-//   if (response.ok) {
-//     const ipa = await response.json();
-//     dispatch(addOneIpa(ipa));
-//     // return ipa;
-//   }
-// };
+  if (response.ok) {
+    const co = await response.json();
+    dispatch(addOneCO(co));
+  }
+};
 
-// export const createIpa = payload => async dispatch => {
-//   const response = await csrfFetch(`/api/ipas`, {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json'
-//     },
-//     body: JSON.stringify(payload)
-//   });
-//   if (response.ok) {
-//     const ipa = await response.json();
-//     dispatch(addOneIpa(ipa));
-//     return ipa;
-//   }
-// };
-// export const destroyIpa = id => async dispatch => {
-//   const response = await csrfFetch(`/api/ipas/${id}`, {
-//     method: 'DELETE'
-//   });
-//   if (response.ok) {
-//     const ipa = await response.json();
-//     dispatch(removeIpa(id));
-//     return ipa;
-//   }
-// };
+export const createCO = payload => async dispatch => {
+  const response = await csrfFetch(`/api/cracked-open`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(payload)
+  });
+  if (response.ok) {
+    const co = await response.json();
+    dispatch(addOneCO(co));
+    return co;
+  }
+};
+export const destroyCO = id => async dispatch => {
+  const response = await csrfFetch(`/api/cracked-open/${id}`, {
+    method: 'DELETE'
+  });
+  if (response.ok) {
+    await response.json();
+    dispatch(removeCO(id));
+  }
+  return response;
+};
 
-// export const editIpa = (payload) => async dispatch => {
-//     const response = await csrfFetch(`/api/ipas/${payload.id}`, {
-//         method: 'PUT',
-//         headers: {
-//           'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify(payload)
-//       });
-//       if (response.ok) {
-//         const ipa = await response.json();
-//         dispatch(addOneIpa(ipa));
-//         return ipa;
-//       }
-// };
+export const editIpa = (payload) => async dispatch => {
+    const response = await csrfFetch(`/api/cracked-open/${payload.id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+      if (response.ok) {
+        const co = await response.json();
+        dispatch(addOneCO(co));
+        return co;
+      }
+};
 
-// const initialState = {
-//   list: []
-// };
+const initialState = {
+  list: []
+};
 
-// const sortList = (list) => {
-//   return list.sort((ipaA, ipaB) => {
-//     return ipaA.ipaName - ipaB.ipaName;  //TODO check that this works
-//   }).map((ipa) => ipa.id);
-// };
+const sortList = (cos) => {
 
-// const ipasReducer = (state = initialState, action) => {
-//   switch (action.type) {
-//     case LOAD_IPAS: {
-//       const allIpas = {};
-//       action.list.forEach(ipa => {
-//         allIpas[ipa.id] = ipa;
-//       });
-//       return {
-//         ...allIpas,
-//         ...state,
-//         list: sortList(action.list),
-//       };
-//     }
-//     case ADD_ONE: {
-//       if (!state[action.ipa.id]) {
-//         const newState = {
-//           ...state,
-//           [action.ipa.id]: action.ipa
-//         };
-//         const ipasList = newState.list.map(id => newState[id]);
-//         ipasList.push(action.ipa);
-//         newState.list = sortList(ipasList);
-//         return newState;
-//       }
-//       return {
-//         ...state,
-//         [action.ipa.id]: {
-//           ...state[action.ipa.id],
-//           ...action.ipa,
-//         }
-//       };
-//     }
-//     case REMOVE_IPA: {
-//         const newState = {
-//             ...state
-//         };
-//         const ipaList = newState.list.filter(ipaId => ipaId !== action.ipaId);
-//         newState.list = ipaList;
-//         delete newState[action.ipaId];
+    cos.sort((a, b) => {
+      return b.id - a.id
+    });
 
-//         return newState;
-//     }
-//     default:
-//       return state;
-//   }
-// }
+    return cos.map(co => +co.id);
+  };
 
-// export default reviewsReducer;
+const cosReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case LOAD_COS: {
+      const allCOs = {};
+      action.list.forEach(co => {
+        allCOs[co.id] = co;
+      });
+      return {
+        ...allCOs,
+        ...state,
+        list: sortList(action.list),
+      };
+    }
+    case ADD_ONE: {
+      if (!state[action.co.id]) {
+        const newState = {
+          ...state,
+          [action.co.id]: action.co
+        };
+        const cosList = newState.list.map(id => newState[id]);
+        cosList.push(action.co);
+        newState.list = sortList(cosList);
+        return newState;
+      }
+      return {
+        ...state,
+        [action.co.id]: {
+          ...state[action.co.id],
+          ...action.co,
+        }
+      };
+    }
+    case REMOVE_CO: {
+        const newState = {
+            ...state
+        };
+        const coList = newState.list.filter(coId => coId !== action.coId);
+        newState.list = coList;
+        delete newState[action.coId];
+
+        return newState;
+    }
+    default:
+      return state;
+  }
+}
+
+export default cosReducer;

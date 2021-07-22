@@ -2,11 +2,13 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import sessionReducer from './session';
 import ipasReducer from './ipas';
+import cosRecucer from './reviews'
 
 
 const rootReducer = combineReducers({
     session: sessionReducer,
     ipas: ipasReducer,
+    cos: cosRecucer
 });
 
 let enhancer;
