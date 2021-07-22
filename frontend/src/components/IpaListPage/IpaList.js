@@ -82,7 +82,7 @@ export default function IpaList() {
             </div>
             <div>
                 {/* <button  onClick={handlePost}>POST</button> */}
-                <button onClick={handlePut}>PUT</button>
+                {/* <button onClick={handlePut}>PUT</button> */}
                 {/* <button onClick={handleDestroy}>DESTROY</button> */}
             </div>
             {ipas && ipas.map(ipa => (
