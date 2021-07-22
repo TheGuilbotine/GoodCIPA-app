@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import * as ipaActions from '../../store/ipas';
-import './AddIpa.css'
+import './EditIpa.css'
 
-const AddIpa = () => {
+const EditIpa = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const [ipaName, setIpaName] = useState('');
@@ -19,7 +19,6 @@ const AddIpa = () => {
     const [errors, setErrors] = useState([]);
     const userId = useSelector(state => state.session.user.id);
 
-    // const updateUserId = (e) => setUserId(e.target.value);
     const updateIpaName = (e) => setIpaName(e.target.value);
     const updateImageUrl = (e) => setImageUrl(e.target.value);
     const updateDescription = (e) => setDescription(e.target.value);
@@ -43,8 +42,8 @@ const AddIpa = () => {
             rating,
             ABV,
         };
-        let createdIpa = await dispatch(ipaActions.createIpa(payload));
-        if (createdIpa) {
+        let editedIpa = await dispatch(ipaActions.editIpa(payload));
+        if (editedIpa) {
             history.push(`/ipas`);
             setErrors(createdIpa.errors)
         }
@@ -56,18 +55,15 @@ const AddIpa = () => {
         //     })
     };
 
-
-
-
     const handleCancelClick = (e) => {
         e.preventDefault();
         history.push('/ipas')
     };
 
     return (
-        <div className='add-ipa__form-container'>
-            <div className='add-ipa__buttons__container'>
-                <NavLink className='add-ipa__buttons__back' to='/ipas'>
+        <div className='edit-ipa__form-container'>
+            <div className='edit-ipa__buttons__container'>
+                <NavLink className='edit-ipa__buttons__back' to='/ipas'>
                     <i className="fas fa-arrow-circle-left"/>
                 </NavLink>
             </div>
@@ -76,14 +72,14 @@ const AddIpa = () => {
                     <li key={idx} className='errors'>{error}</li>
                 ))}
             </ul>
-            <section className='add-ipa__form'>
-                <h1 className='add-ipa__text'>Add to your Beer Cave</h1>
+            <section className='edit-ipa__form'>
+                <h1 className='edit-ipa__text'>edit to your Beer Cave</h1>
                 <form onSubmit={handleSubmit}>
-                    <div className='add_ipa__element-container'>
+                    <div className='edit_ipa__element-container'>
                         <i className='fas fa-beer'>
-                            <div className='add-ipa__input-container'>
+                            <div className='edit-ipa__input-container'>
                                 <input
-                                    className='add-ipa__input'
+                                    className='edit-ipa__input'
                                     placeholder='Beer Name'
                                     type='text'
                                     value={ipaName}
@@ -93,11 +89,11 @@ const AddIpa = () => {
                             </div>
                         </i>
                     </div>
-                    <div className='add_ipa__element-container'>
+                    <div className='edit_ipa__element-container'>
                         <i className="fas fa-camera-retro">
-                            <div className='add-ipa__input-container'>
+                            <div className='edit-ipa__input-container'>
                                 <input
-                                    className='add-ipa__input'
+                                    className='edit-ipa__input'
                                     placeholder='Image URL'
                                     type='text'
                                     value={imageUrl}
@@ -107,11 +103,11 @@ const AddIpa = () => {
                             </div>
                         </i>
                     </div>
-                    <div className='add_ipa__element-container'>
+                    <div className='edit_ipa__element-container'>
                         <i className="fas fa-pencil-alt">
-                            <div className='add-ipa__input-container'>
+                            <div className='edit-ipa__input-container'>
                                 <input
-                                    className='add-ipa__input'
+                                    className='edit-ipa__input'
                                     placeholder='Description'
                                     type='text'
                                     value={description}
@@ -121,11 +117,11 @@ const AddIpa = () => {
                             </div>
                         </i>
                     </div>
-                    <div className='add_ipa__element-container'>
+                    <div className='edit_ipa__element-container'>
                         <i className="fas fa-industry">
-                            <div className='add-ipa__input-container'>
+                            <div className='edit-ipa__input-container'>
                                 <input
-                                    className='add-ipa__input'
+                                    className='edit-ipa__input'
                                     placeholder='Brewery'
                                     type='text'
                                     value={brewery}
@@ -135,11 +131,11 @@ const AddIpa = () => {
                             </div>
                         </i>
                     </div>
-                    <div className='add_ipa__element-container'>
+                    <div className='edit_ipa__element-container'>
                         <i className="fas fa-globe">
-                            <div className='add-ipa__input-container'>
+                            <div className='edit-ipa__input-container'>
                                 <input
-                                    className='add-ipa__input'
+                                    className='edit-ipa__input'
                                     placeholder='Brewery URL Link'
                                     type='text'
                                     value={breweryLink}
@@ -148,11 +144,11 @@ const AddIpa = () => {
                             </div>
                         </i>
                     </div>
-                    <div className='add_ipa__element-container'>
+                    <div className='edit_ipa__element-container'>
                         <i className="fas fa-globe-africa">
-                            <div className='add-ipa__input-container'>
+                            <div className='edit-ipa__input-container'>
                                 <input
-                                    className='add-ipa__input'
+                                    className='edit-ipa__input'
                                     placeholder='Country'
                                     type='text'
                                     value={country}
@@ -162,12 +158,12 @@ const AddIpa = () => {
                             </div>
                         </i>
                     </div>
-                    <div className='add_ipa__element-container'>
+                    <div className='edit_ipa__element-container'>
                         <i className="fas fa-star">
                         <label for='rating'>Rating</label>
-                            <div className='add-ipa__input-container'>
+                            <div className='edit-ipa__input-container'>
                                 <input
-                                    className='add-ipa__input'
+                                    className='edit-ipa__input'
                                     name='rating'
                                     type='number'
                                     step='0.5'
@@ -180,12 +176,12 @@ const AddIpa = () => {
                             </div>
                         </i>
                     </div>
-                    <div className='add_ipa__element-container'>
+                    <div className='edit_ipa__element-container'>
                         <i className="fas fa-percent">
                         <label for='abv'>ABV</label>
-                            <div className='add-ipa__input-container'>
+                            <div className='edit-ipa__input-container'>
                                 <input
-                                    className='add-ipa__input'
+                                    className='edit-ipa__input'
                                     name='abv'
                                     type='number'
                                     step='0.1'
@@ -206,5 +202,3 @@ const AddIpa = () => {
         </div>
     )
 }
-
-export default AddIpa;
