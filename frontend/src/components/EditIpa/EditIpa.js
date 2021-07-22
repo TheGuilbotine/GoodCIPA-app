@@ -1,4 +1,4 @@
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
@@ -8,6 +8,7 @@ import './EditIpa.css'
 const EditIpa = () => {
     const dispatch = useDispatch();
     const history = useHistory();
+    const {id} = useParams();
     const [ipaName, setIpaName] = useState('');
     const [imageUrl, setImageUrl] = useState('');
     const [description, setDescription] = useState('');
@@ -19,6 +20,11 @@ const EditIpa = () => {
     const [errors, setErrors] = useState([]);
     const userId = useSelector(state => state.session.user.id);
 
+    const beers = useSelector(state => {
+        return state.ipas;
+    })
+    const beer = beers[id];
+
     const updateIpaName = (e) => setIpaName(e.target.value);
     const updateImageUrl = (e) => setImageUrl(e.target.value);
     const updateDescription = (e) => setDescription(e.target.value);
@@ -28,11 +34,24 @@ const EditIpa = () => {
     const updateRating = (e) => setRating(e.target.value);
     const updateABV = (e) => setABV(e.target.value);
 
+    useEffect(() => {
+        if(beer) {
+            setIpaName(beer.name);
+            setImageUrl(beer.imageUrl);
+            setDescription(beer.description);
+            setBrewery(beer.brewery);
+            setBreweryLink(beer.breweryLink);
+            setCountry(beer.country);
+            setRating(beer.rating);
+            setABV(beer.ABV);
+        }
+    }, [])
+
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setErrors([]);
-        const payload = {
-            userId,
+        // setErrors([]);
+        await dispatch(ipaActions.editIpa({
+            id,
             name: ipaName,
             imageUrl,
             description,
@@ -41,18 +60,8 @@ const EditIpa = () => {
             country,
             rating,
             ABV,
-        };
-        let editedIpa = await dispatch(ipaActions.editIpa(payload));
-        if (editedIpa) {
-            history.push(`/ipas`);
-            setErrors(createdIpa.errors)
-        }
-        console.log('Errors?????', createdIpa.errors)
-        // return dispatch(ipaActions.createIpa({ createdIpa })).catch(
-        //     async (res) => {
-        //       const data = await res.json();
-        //       if (data && data.errors) setErrors(data.errors);
-        //     })
+        }))
+        history.push('/ipas')
     };
 
     const handleCancelClick = (e) => {
@@ -73,7 +82,7 @@ const EditIpa = () => {
                 ))}
             </ul>
             <section className='edit-ipa__form'>
-                <h1 className='edit-ipa__text'>edit to your Beer Cave</h1>
+                <h1 className='edit-ipa__text'>Edit your {ipaName}</h1>
                 <form onSubmit={handleSubmit}>
                     <div className='edit_ipa__element-container'>
                         <i className='fas fa-beer'>
@@ -195,10 +204,12 @@ const EditIpa = () => {
                             </div>
                         </i>
                     </div>
-                <button className='create-button' type='submit'>Stock new IPA</button>
+                <button className='create-button' type='submit'>Stock edited IPA</button>
                 <button className='cancel-button' type='button' onClick={handleCancelClick}>Cancel</button>
                 </form>
             </section>
         </div>
     )
-}
+};
+
+export default EditIpa;

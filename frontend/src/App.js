@@ -10,6 +10,7 @@ import IpaList from './components/IpaListPage';
 import IpaPage from './components/IpaPage/IpaPage';
 import CrackedOpen from './components/CrackedOpen';
 import AddIpa from './components/AddIpa';
+import EditIpa from './components/EditIpa/EditIpa';
 import Footer from './components/Footer';
 import './index.css';
 
@@ -39,6 +40,9 @@ function App() {
           </Route>
           <Route path='/new-ipa'>
             <AddIpa />
+          </Route>
+          <Route path='/edit-ipa/:id'>
+            <EditIpa />
           </Route>
           <Route path='/cracked-open'>
             <CrackedOpen />
