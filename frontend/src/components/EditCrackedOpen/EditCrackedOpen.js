@@ -2,7 +2,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { createCO } from '../../store/reviews';
+import { editCO } from '../../store/reviews';
 import './EditCrackedOpen.css'
 
 export default function EditCrackedOpen() {
@@ -14,35 +14,31 @@ export default function EditCrackedOpen() {
     const userId = useSelector(state => state.session.user.id);
     const ipaId = useSelector(state => {
         console.log(state)
+        // state.ipas[id]?.id
     });
 
-    // const beers = useSelector(state => {
-    //     return state.ipas;
-    // })
-    // const beer = beers[id];
-    //TODO get reviews
-
     const updateComment = (e) => setComment(e.target.value);
-
-    // useEffect(() => {
-    //     if(beer)
-    // })
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setErrors([]);
 
         const payload = {
+            id,
             userId,
             ipaId,
             comment
         };
-        let createComment = await dispatch(createCO(payload));
+        console.log("PAYLOAD3", payload)
+        console.log(editCO)
+        let createComment = await dispatch(editCO(payload));
         if (createComment) {
             history.push('/cracked-open');
             setErrors(createComment.errors)
         }
     };
+
+    console.log('IDS HERE ====>', id, ipaId)
 
     const handleCancelClick = (e) => {
         e.preventDefault();

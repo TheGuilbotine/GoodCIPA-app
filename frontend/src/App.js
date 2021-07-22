@@ -52,7 +52,7 @@ function App() {
           <Route path='/crack-open/:id'>
             <CrackOpen />
           </Route>
-          <Route paht='/edit-cracked-open/:id'>
+          <Route path='/edit-cracked-open/:id'>
             <EditCrackedOpen />
           </Route>
           <Route path='/ipas/:id(\\d)'>

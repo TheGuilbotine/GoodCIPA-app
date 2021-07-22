@@ -64,7 +64,8 @@ export const destroyCO = id => async dispatch => {
   return response;
 };
 
-export const editIpa = (payload) => async dispatch => {
+export const editCO = (payload) => async dispatch => {
+  console.log('EASY TO SEEEEEEEEE4', payload)
     const response = await csrfFetch(`/api/cracked-open/${payload.id}`, {
         method: 'PUT',
         headers: {
