@@ -11,16 +11,24 @@
     border: 2px solid rgb(0, 0, 0);
     background-color: rgba(192, 128, 8, 0.5);
     border-radius: 11px;
-
+    flex-wrap: wrap;
 }
 
 .ipa__container {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .image-info__container {
     display: flex;
     flex-direction: column;
+    /* flex-wrap: wrap; */
+}
+
+.image__container {
+    border-radius: 11px;
+    margin: 7px 0px 0px 22px;
+    height: 444px;
 }
 
 .image-text__container {
