@@ -1,39 +1,20 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { NavLink, useHistory } from 'react-router-dom';
+import { NavLink, useHistory, useParams } from 'react-router-dom';
 import { csrfFetch } from '../../store/csrf';
 import { destroyCO, getCOs } from '../../store/reviews';
 import './CrackedOpen.css';
 
 export default function CrackedOpen() {
-    // const [reviews, setReviews] = useState([]);
     const dispatch = useDispatch();
     const history = useHistory();
-
     const reviews = useSelector(state => state.cos.list.map(id => state.cos[id]));
+    const sessionUser = useSelector(state => state.session.user);
 
-    // const sortList = (cos) => {
-    //     return cos.sort((a, b) => {
-    //         return b.id - a.id
-    //     });
-    // };
 
     useEffect(async () => {
         dispatch(getCOs());
     }, [dispatch]);
-
-    // TODO get rerender on delete!!!
-    // useEffect(() => {
-    //     // dispatch(getCOs())
-    //     (async function() {
-    //         const res = await csrfFetch('/api/cracked-open');
-
-    //         if(res.ok) {
-    //             const newReviews = await res.json();
-    //             setReviews(sortList(newReviews));
-    //         }
-    //     })();
-    // }, [dispatch]);
 
     return (
         <div className='review-list__container'>
@@ -64,19 +45,25 @@ export default function CrackedOpen() {
                             </div>
                         </div>
                     </div>
-                    <div className='review-list__crud-buttons'>
-                        <button className='review-list__edit-button'>
-                            <NavLink className='review-list__edit-button' to={`/edit-cracked-open/${review.id}`}>
-                                EDIT
-                            </NavLink>
-                        </button>
-                        {/* // TODO get rerender on delete!!! */}
-                        <button onClick={async() => {
-                             dispatch(destroyCO(review.id))
-                             history.push('/cracked-open')
-                             return;
-                        }} className='review-list__delete-button'>DELETE</button>
-                    </div>
+                    { function ButtonsRender() {
+                        // const sessionUser = useSelector(state => state.session.user);
+                        if (sessionUser.id === review.userId) {
+                            return (
+                                <div className='review-list__crud-buttons'>
+                                <button className='review-list__edit-button'>
+                                    <NavLink className='review-list__edit-button' to={`/edit-cracked-open/${review.id}`}>
+                                        EDIT
+                                    </NavLink>
+                                </button>
+                                <button onClick={async() => {
+                                        dispatch(destroyCO(review.id))
+                                        history.push('/cracked-open')
+                                        return;
+                                }} className='review-list__delete-button'>DELETE</button>
+                            </div>
+                            )
+                        }
+                    }()}
                 </div>
             ))}
         </div>

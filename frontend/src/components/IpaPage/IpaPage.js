@@ -1,43 +1,84 @@
 import { useState, useEffect } from 'react';
 import { useParams, NavLink } from 'react-router-dom';
+
 import { csrfFetch } from '../../store/csrf';
 import './IpaPage.css'
 
 
 export default function IpaPage() {
-    const [userId, setUserId] = useState(/*TODO user.id*/);
-    const [ipaName, setIpaName] = useState('');
+    const [name, setName] = useState('');
     const [imageUrl, setImageUrl] = useState('');
-    const [description, setDescription] = useState('');
     const [brewery, setBrewery] = useState('');
     const [breweryLink, setBreweryLink] = useState('');
+    const [description, setDescription] = useState('');
     const [country, setCountry] = useState('');
-    const [rating, setRating] = useState(5);
+    const [rating, setRating] = useState(0);
+    const [ABV, setABV] = useState(0);
+    const [cos, setCos] = useState([]);
 
     const ipaId = useParams().id;
 
     useEffect(() => {
         (async function() {
             const res = await csrfFetch(`/api/ipas/${ipaId}`);
-
-            if(res.ok) {
+            const revs = await csrfFetch(`/api/ipas/${ipaId}/reviews`)
+            if (res.ok && revs.ok) {
                 const ipa = await res.json();
-
-                setUserId(ipa.userId);
-                setIpaName(ipa.ipaName);
+                const comments = await revs.json();
+                setName(ipa.name);
                 setImageUrl(ipa.imageUrl);
-                setDescription(ipa.description);
                 setBrewery(ipa.brewery);
                 setBreweryLink(ipa.breweryLink);
+                setDescription(ipa.description);
                 setCountry(ipa.country);
                 setRating(ipa.rating);
+                setABV(ipa.ABV);
+                setCos(comments);
             }
         })();
     }, [ipaId]);
 
+
     return (
-        <div className='ipa-list__container'>
-            <h1>{ipaName}</h1>
+        <div className='ipa-page__container'>
+            <div className='ipa-list__buttons__container'>
+                <NavLink className='ipa-list__back' to='/ipas'>
+                    <i className="fas fa-arrow-circle-left"/>
+                </NavLink>
+                <NavLink className='ipa__add-review' to='/crack-open/:id'>
+                    {/* <i className="fas fa-plus"/> */}
+                    Crack Open
+                </NavLink>
+            </div>
+            <div className='ipa-content__container'>
+                <div className='ipa__container'>
+                    <div className='ipa-info__container'>
+                        <h1>{name} from <a href={breweryLink}>{brewery}</a></h1>
+                        <p>{description}</p>
+                    </div>
+                    <div className='image-info__container'>
+                        <div className='image_container'>
+                            <img src={imageUrl}/>
+                        </div>
+                        <div className='image-text__conatiner'>
+                            <div className='ipa-stats_container'>
+                                <p className='ipa__text'>{rating} / 10 * ABV {ABV}%</p>
+                            </div>
+                            <div className='ipa-country__container'>
+                                <p className='ipa__text'>{country}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className='ipa-reviews__container'>
+                {/* TODO map over all reviews pertaining to this beer */}
+                {cos.map(review => {
+                   return <p key={review.id}>{review.comment}</p>
+                })}
+            </div>
         </div>
-    );
+
+
+    )
 }

@@ -4,7 +4,7 @@ const { check }  = require('express-validator');
 const { requireAuth } = require('../../utils/auth');
 const { handleValidationErrors } = require('../../utils/validation');
 
-const { IPA, User} = require('../../db/models');
+const { IPA, User, CrackOpen} = require('../../db/models');
 
 const router = express.Router();
 
@@ -50,12 +50,23 @@ router.get('/:id(\\d+)', asyncHandler(async (req, res, next) => {
 
     try {
         const ipa = await IPA.findByPk(id,{
-            include: [User]
+            include: [User, CrackOpen]
         });
         res.json(ipa);
     } catch(err) {
         next(err);
     }
+}));
+
+router.get('/:id(\\d+)/reviews', asyncHandler(async (req, res, next) => {
+    const id = req.params.id;
+    console.log('IDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD',id);
+    const reviews = await CrackOpen.findAll({
+        where: {
+        ipaId: id
+        }
+    })
+    return res.json(reviews);
 }));
 
 router.get(

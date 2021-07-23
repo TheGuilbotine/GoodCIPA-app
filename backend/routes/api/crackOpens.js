@@ -66,9 +66,8 @@ router.put(
     requireAuth,
     asyncHandler( async (req, res, next) => {
         const id = req.params.id;
-        const review = await CrackOpen.findByPk({
+        const review = await CrackOpen.findByPk(id, {
             include: [User, IPA],
-            id
         });
         const thisThing = req.body
         console.log('HEHEHEHEHEHEHE', thisThing)

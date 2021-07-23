@@ -7,12 +7,12 @@ import Navigation from './components/Navigation';
 import HomePage from './components/HomePage'
 import ProfilePage from './components/ProfilePage';
 import IpaList from './components/IpaListPage';
-import IpaPage from './components/IpaPage/IpaPage';
+import IpaPage from './components/IpaPage';
 import CrackedOpen from './components/CrackedOpen';
 import AddIpa from './components/AddIpa';
 import EditIpa from './components/EditIpa/EditIpa';
 import CrackOpen from './components/CrackOpen';
-import EditCrackedOpen from './components/EditCrackedOpen/EditCrackedOpen';
+import EditCrackedOpen from './components/EditCrackedOpen';
 import Footer from './components/Footer';
 import './index.css';
 
@@ -37,8 +37,11 @@ function App() {
           <Route path='/profile'>
             <ProfilePage />
           </Route>
-          <Route path='/ipas'>
+          <Route exact path='/ipas'>
             <IpaList />
+          </Route>
+          <Route exact path='/ipas/:id'>
+            <IpaPage />
           </Route>
           <Route path='/new-ipa'>
             <AddIpa />
@@ -54,9 +57,6 @@ function App() {
           </Route>
           <Route path='/edit-cracked-open/:id'>
             <EditCrackedOpen />
-          </Route>
-          <Route path='/ipas/:id(\\d)'>
-            <IpaPage />
           </Route>
         </Switch>
       )}

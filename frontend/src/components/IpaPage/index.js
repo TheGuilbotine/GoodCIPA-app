@@ -1,3 +1,3 @@
-import IpaPage from './IpaPage';
+import IpaPage from './IpaPage.js';
 
 export default IpaPage;

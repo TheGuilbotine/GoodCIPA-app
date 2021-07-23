@@ -1,3 +1,3 @@
-import EditCrackedOpen from '/EditCrackedOpen';
+import EditCrackedOpen from './EditCrackedOpen.js';
 
 export default EditCrackedOpen;
