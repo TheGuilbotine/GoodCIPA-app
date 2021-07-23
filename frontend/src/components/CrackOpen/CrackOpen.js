@@ -1,8 +1,8 @@
 import { useHistory, useParams } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { createCO } from '../../store/reviews';
+import { createCO, getCOs } from '../../store/reviews';
 import './CrackOpen.css'
 
 export default function CrackOpen() {
@@ -24,9 +24,14 @@ export default function CrackOpen() {
 
     const updateComment = (e) => setComment(e.target.value);
 
+    useEffect(() => {
+        dispatch(getCOs())
+    }, [dispatch])
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setErrors([]);
+        // const User = User.findByPk(User)
 
         const payload = {
             userId,

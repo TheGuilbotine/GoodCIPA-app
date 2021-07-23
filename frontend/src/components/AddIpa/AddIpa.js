@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import * as ipaActions from '../../store/ipas';
 import './AddIpa.css'
+import '../../index.css'
 
 const AddIpa = () => {
     const dispatch = useDispatch();
@@ -43,19 +44,19 @@ const AddIpa = () => {
             rating,
             ABV,
         };
-        let createdIpa = await dispatch(ipaActions.createIpa(payload));
-        if (createdIpa) {
-            history.push(`/ipas`);
-            setErrors(createdIpa.errors)
+        try {
+            let createdIpa = await dispatch(ipaActions.createIpa(payload));
+            if (createdIpa) {
+                history.push('/ipas');
+            }
+        } catch(err) {
+            const errRes = await err.json();
+            const errsArr = errRes.errors.filter(error => error !== 'Invalid value')
+            setErrors(errsArr)
         }
-        console.log('Errors?????', createdIpa.errors)
-        // return dispatch(ipaActions.createIpa({ createdIpa })).catch(
-        //     async (res) => {
-        //       const data = await res.json();
-        //       if (data && data.errors) setErrors(data.errors);
-        //     })
     };
 
+    console.log(errors)
 
 
 
@@ -71,13 +72,13 @@ const AddIpa = () => {
                     <i className="fas fa-arrow-circle-left"/>
                 </NavLink>
             </div>
-            <ul className='errors__container'>
-                {errors.map((error, idx) => (
-                    <li key={idx} className='errors'>{error}</li>
-                ))}
-            </ul>
             <section className='add-ipa__form'>
                 <h1 className='add-ipa__text'>Add to your Beer Cave</h1>
+                <ul className='errors__container'>
+                    {errors.map((error, idx) => (
+                        <li key={idx} className='errors'>{error}</li>
+                    ))}
+                </ul>
                 <form onSubmit={handleSubmit}>
                     <div className='add_ipa__element-container'>
                         <i className='fas fa-beer'>

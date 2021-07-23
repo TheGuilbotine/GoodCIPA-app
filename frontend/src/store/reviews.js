@@ -49,17 +49,19 @@ export const createCO = payload => async dispatch => {
   });
   if (response.ok) {
     const co = await response.json();
+    console.log(co);
     dispatch(addOneCO(co));
     return co;
   }
 };
+
 export const destroyCO = id => async dispatch => {
   const response = await csrfFetch(`/api/cracked-open/${id}`, {
     method: 'DELETE'
   });
   if (response.ok) {
     await response.json();
-    // dispatch(removeCO(id));
+    dispatch(removeCO(id));
   }
   return response;
 };

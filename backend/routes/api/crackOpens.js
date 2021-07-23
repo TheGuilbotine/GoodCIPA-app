@@ -48,14 +48,22 @@ router.post(
     asyncHandler( async (req, res, next) => {
     const { userId, ipaId, comment } = req.body;
 
-
     const newReview = await CrackOpen.create({
         userId,
         ipaId,
         comment
     });
 
-    return res.json(newReview);
+    const id = req.params.id;
+    const reviewAdded = await CrackOpen.findByPk({
+        include: [User, IPA],
+        id,
+        userId,
+        ipaId,
+        comment
+    });
+
+    return res.json(reviewAdded);
 }));
 
 router.put(
@@ -64,7 +72,10 @@ router.put(
     requireAuth,
     asyncHandler( async (req, res, next) => {
         const id = req.params.id;
-        const review = await CrackOpen.findByPk(id);
+        const review = await CrackOpen.findByPk({
+            include: [User, IPA],
+            id
+        });
         const thisThing = req.body
         console.log('HEHEHEHEHEHEHE', thisThing)
         const newReview = await review.update(req.body);
