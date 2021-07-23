@@ -54,14 +54,8 @@ router.post(
         comment
     });
 
-    const id = req.params.id;
-    const reviewAdded = await CrackOpen.findByPk({
-        include: [User, IPA],
-        id,
-        userId,
-        ipaId,
-        comment
-    });
+    const id = newReview.id;
+    const reviewAdded = await CrackOpen.findByPk(id, { include: [User, IPA] });
 
     return res.json(reviewAdded);
 }));
