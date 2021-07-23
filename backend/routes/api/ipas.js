@@ -60,7 +60,6 @@ router.get('/:id(\\d+)', asyncHandler(async (req, res, next) => {
 
 router.get('/:id(\\d+)/reviews', asyncHandler(async (req, res, next) => {
     const id = req.params.id;
-    console.log('IDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD',id);
     const reviews = await CrackOpen.findAll({
         where: {
         ipaId: id

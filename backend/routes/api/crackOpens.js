@@ -69,8 +69,6 @@ router.put(
         const review = await CrackOpen.findByPk(id, {
             include: [User, IPA],
         });
-        const thisThing = req.body
-        console.log('HEHEHEHEHEHEHE', thisThing)
         const newReview = await review.update(req.body);
 
         return res.json(newReview);

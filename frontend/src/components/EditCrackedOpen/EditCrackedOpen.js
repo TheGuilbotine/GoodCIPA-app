@@ -29,16 +29,12 @@ export default function EditCrackedOpen() {
             ipaId,
             comment
         };
-        console.log("PAYLOAD3", payload)
-        console.log(editCO)
         let createComment = await dispatch(editCO(payload));
         if (createComment) {
             history.push('/cracked-open');
             setErrors(createComment.errors)
         }
     };
-
-    console.log('IDS HERE ====>', id, ipaId)
 
     const handleCancelClick = (e) => {
         e.preventDefault();

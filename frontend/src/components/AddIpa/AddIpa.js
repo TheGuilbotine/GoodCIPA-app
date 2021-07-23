@@ -56,10 +56,6 @@ const AddIpa = () => {
         }
     };
 
-    console.log(errors)
-
-
-
     const handleCancelClick = (e) => {
         e.preventDefault();
         history.push('/ipas')

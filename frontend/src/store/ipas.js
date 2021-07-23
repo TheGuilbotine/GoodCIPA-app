@@ -59,7 +59,6 @@ export const destroyIpa = id => async dispatch => {
   const response = await csrfFetch(`/api/ipas/${id}`, {
     method: 'DELETE'
   });
-  console.log('RESPONSE =====>', response, id)
   if (response.ok) {
     await response.json();
     dispatch(removeIpa(id));

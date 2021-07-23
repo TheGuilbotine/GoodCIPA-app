@@ -43,3 +43,11 @@
 .ipa__text {
     text-align: center;
 }
+
+.ipa-reviews__container {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgb(192, 128, 8);
+    border-radius: 11px;
+    color:burlywood;
+    text-align: center;
+}
