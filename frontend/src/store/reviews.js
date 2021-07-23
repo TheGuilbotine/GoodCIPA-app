@@ -59,7 +59,7 @@ export const destroyCO = id => async dispatch => {
   });
   if (response.ok) {
     await response.json();
-    dispatch(removeCO(id));
+    // dispatch(removeCO(id));
   }
   return response;
 };

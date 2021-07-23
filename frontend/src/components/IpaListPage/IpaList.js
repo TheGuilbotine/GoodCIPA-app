@@ -17,7 +17,8 @@ export default function IpaList() {
 
     useEffect(() => {
         dispatch(getIpas())
-    }, [])
+        // TODO check if needed?
+    }, [dispatch])
 
     // useEffect(() => {
     //     (async function() {

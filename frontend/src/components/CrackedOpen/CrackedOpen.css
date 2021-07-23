@@ -86,6 +86,10 @@
     background-color: rgba(0, 0, 0, 0);
 }
 
+.review-list__delete-button:hover {
+    cursor: pointer;
+}
+
 .review-list__crud-buttons {
     width: 116px;
     margin-bottom: 11px;

@@ -35,8 +35,8 @@ export default function CrackOpen() {
         };
         let createComment = await dispatch(createCO(payload));
         if (createComment) {
+            // setErrors(createComment.errors)
             history.push('/cracked-open');
-            setErrors(createComment.errors)
         }
     };
 

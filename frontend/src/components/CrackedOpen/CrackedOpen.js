@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { csrfFetch } from '../../store/csrf';
 import { destroyCO } from '../../store/reviews';
 import './CrackedOpen.css';
@@ -8,6 +8,7 @@ import './CrackedOpen.css';
 export default function CrackedOpen() {
     const [reviews, setReviews] = useState([]);
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const sortList = (cos) => {
         return cos.sort((a, b) => {
@@ -64,7 +65,11 @@ export default function CrackedOpen() {
                             </NavLink>
                         </button>
                         {/* // TODO get rerender on delete!!! */}
-                        <button onClick={() => dispatch(destroyCO(review.id))} className='review-list__delete-button'>DELETE</button>
+                        <button onClick={async() => {
+                             await dispatch(destroyCO(review.id))
+                             history.push('/cracked-open')
+                             return;
+                        }} className='review-list__delete-button'>DELETE</button>
                     </div>
                 </div>
             ))}
