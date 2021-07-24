@@ -28,7 +28,8 @@ export default function IpaList() {
                     <i className="fas fa-arrow-circle-left"/>
                 </NavLink>
                 <NavLink className='ipa-list__add-ipa' to='/new-ipa'>
-                    <i className="fas fa-plus"/>
+                    {/* <i className="fas fa-plus"/> */}
+                    <h1 className='ipa-list__add-ipa fas'>Add to the Cave</h1>
                 </NavLink>
             </div>
             {ipas && ipas.map(ipa => (
