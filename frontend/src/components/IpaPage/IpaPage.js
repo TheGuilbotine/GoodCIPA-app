@@ -63,7 +63,7 @@ export default function IpaPage() {
                     </div>
                     <div className='image-info__container'>
                         <div className='image__container'>
-                            <img className='image__container' src={imageUrl}/>
+                            <img className='image__container' alt={name} src={imageUrl}/>
                         </div>
                         <div className='image-text__conatiner'>
                             <div className='ipa-stats_container'>

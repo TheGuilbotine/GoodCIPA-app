@@ -42,7 +42,7 @@ function ProfileButton({ user }) {
     <>
       <button className='profile-button' onClick={openMenu}>
         <i className="fas fa-wine-bottle"></i>
-        Profile
+        <p>{user.username}</p>
         {/* <i className="fab fa-old-republic" /> */}
       </button>
       {showMenu && (

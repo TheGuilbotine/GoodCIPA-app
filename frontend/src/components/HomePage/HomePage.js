@@ -22,14 +22,14 @@ function HomePage() {
                     Good Cold Indian Pale Ale sipper. */}
                 </p>
             </div>
-            <div className='splash-page__search-bar'>
+            {/* <div className='splash-page__search-bar'>
                 <input className='splash-page__search' type="text" placeholder="  Search..."></input>
             </div>
             <div className='splash-page__search-container'>
                 <ul className='splash-page__search-results'>
                     SEARCHED ITEMS HERE
                 </ul>
-            </div>
+            </div> */}
             <div className='splash-page__disclaimer-container'>
                 <h3 className='splash-page__text'>
                     There are some people who should not drink any alcohol, including those who are:
