@@ -29,7 +29,7 @@ Or go to the fridge to see a list of beers reviewed by other users. Users can cl
   <img src='https://github.com/TheGuilbotine/GoodCIPA-app/blob/main/profile-gcipa.png' alt='Profile Page' />
 </p>
 
-- From the Add or Edit beer form users will be able to dynamically add, edit, and deltete beers.
+- From the Add or Edit beer form users will be able to dynamically add, edit, and delete beers.
  
 <p align=center>
   <img src='https://github.com/TheGuilbotine/GoodCIPA-app/blob/main/add-gcipa.png' alt='Add IPA Page' />
