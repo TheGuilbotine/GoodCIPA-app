@@ -1,7 +1,3 @@
-# GoodCIPA-app
-GooCIPA is for beer lovers, more specifically people who really enjoy Indian Pale Ales. Based off of the app UNTAPPD, users can share IPAs in the beer cave and review(Crack Open) beers into the fridge.
-
-
 # GoodCIPA by Pierre Guilbault
 
 # The IPA enthusiasts app. A cave of IPAs that can be added to and browsed to find new beers to open, try, and review.
