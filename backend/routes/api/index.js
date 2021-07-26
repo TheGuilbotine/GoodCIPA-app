@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const asyncHandler = require('express-async-handler');
-const { User } = require('../../db/models');
-const { setTokenCookie, restoreUser, requireAuth } = require('../../utils/auth.js');
+// const asyncHandler = require('express-async-handler');
+// const { User } = require('../../db/models');
+// const { setTokenCookie, restoreUser, requireAuth } = require('../../utils/auth.js');
 
 const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
