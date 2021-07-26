@@ -12,3 +12,25 @@
 #root {
     height: 100%;
 }
+
+
+textarea {
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(252, 208, 126);
+    border: 0;
+    text-indent: 5px;
+
+}
+
+/* textarea:focus {
+    border: rgb(192, 128, 8);
+} */
+
+input {
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(252, 208, 126);
+    border: 0;
+    text-indent: 5px;
+}
