@@ -30,7 +30,7 @@ module.exports = {
       {
         userId: 1,
         name: 'Taras Boulba',
-        imageUrl: 'https://cdn.beeradvocate.com/im/c_beer_image.gif',
+        imageUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.YQNS7h_ZNIbgs4Tf_-FHuQHaFj%26pid%3DApi&f=1',
         brewery: 'Brasserie de la Senne',
         breweryLink: 'https://www.brasseriedelasenne.be/?lang=fr',
         description: 'Light blonde with 4.5% alc., generously hopped with the finest aromatic hops, giving it a very refreshing character and a scent reminiscent of citrus.',
@@ -42,7 +42,7 @@ module.exports = {
       {
         userId: 1,
         name: 'Lowlander I.P.A.',
-        imageUrl: 'https://cdn.beeradvocate.com/im/c_beer_image.gif',
+        imageUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.interdrinks.com%2Fv5%2Fimg%2Fp%2F29148-41859-w1572-h1080-transparent.png&f=1&nofb=1',
         brewery: 'Lowlander Botanical Beers',
         breweryLink: 'https://www.lowlander-beer.com/',
         description: 'Brewed with coriander seeds & white tea. Citrusy, hoppy & bitter with refreshing notes of spice.',
@@ -138,7 +138,7 @@ module.exports = {
       {
         userId: 1,
         name: 'Jungle Juice',
-        imageUrl: 'https://cdn.beeradvocate.com/im/c_beer_image.gif',
+        imageUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.ZPmm_1FeJRdwAq4yN3DBVAAAAA%26pid%3DApi&f=1',
         brewery: 'Cervisiam Bryggeri',
         breweryLink: 'https://www.cervisiam.no/',
         description: ' Jungle Juice is an imperial IPA made to emulate a punch in the face by Rambo. It\'s brewed with our favourite hop, Nelson Sauvin, along with considerable doses of other hops lending it a solid tropical-fruity nose. A rich and creamy Imperial IPA.',
@@ -174,7 +174,7 @@ module.exports = {
       {
         userId: 1,
         name: 'Madame Butterfly',
-        imageUrl: 'https://cdn.beeradvocate.com/im/c_beer_image.gif',
+        imageUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.RnyTrrCSKjR-cTXiVnV5ZwHaIY%26pid%3DApi&f=1',
         brewery: 'Pühaste Brewery',
         breweryLink: 'https://puhastebeer.com/',
         description: 'Amber ale brewed with Earl Grey tea, American hops (Centennial, Cascade, Willamette) and cornflower blossoms.',
@@ -256,7 +256,7 @@ module.exports = {
 
       },
       {
-        userId: 1,
+        userId: 7,
         name: 'Aero Pale',
         imageUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP._Q-xO4oQ3tTZ7W1P-0ZrygAAAA%26pid%3DApi%26h%3D160&f=1',
         brewery: 'Brasserie 3ienchs',
@@ -292,8 +292,8 @@ module.exports = {
 
       },
       {
-        userId: 1,
-        name: 'Beer No; 003',
+        userId: 7,
+        name: 'Beer No. 003',
         imageUrl: 'https://cdn.shopify.com/s/files/1/2806/3046/products/IMG_20210510_125425_1024x1024@2x.jpg?v=1620727370',
         brewery: 'Small Awe Bullhouse Brew Co.',
         breweryLink: 'https://waterintobeer.co.uk/products/small-axe',
@@ -306,7 +306,7 @@ module.exports = {
       {
         userId: 1,
         name: 'The Foxes Rock IPA',
-        imageUrl: 'https://cdn.beeradvocate.com/im/c_beer_image.gif',
+        imageUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.ECJF2Vr8VIKckfft2UsvDAHaKq%26pid%3DApi%26h%3D160&f=1',
         brewery: 'Cumberland Brewing Company',
         breweryLink: 'https://cumberlandbrewing.com/',
         description: 'Hazy amber with an orange tinge & 0.25cm frothy, white head that\'s patchy. The nose is poor & bland with faint biscuit & earthy hops but little else. The taste was stronger with more hop bitterness, some pine & light floral touches on top of a light-medium, crisp & quite dry body with a floral bitterness that lingers at the end too.',
@@ -326,6 +326,28 @@ module.exports = {
         rating: 6,
         ABV: 5,
 
+      },
+      {
+        userId: 7,
+        name: 'Laguanitas IPA',
+        imageUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.thetradingpost.fr%2FFiles%2F126939%2FImg%2F22%2FBEERLAGUNIPAx1200.jpg&f=1&nofb=1',
+        brewery: 'Laguanitas Brewing Company',
+        breweryLink: 'https://lagunitas.com/beer/ipa',
+        description: 'Made with 43 different hops and 65 various malts, this redolent ale will likely float your boat, whatever planet you\'re on.',
+        country: 'United States of America',
+        rating: 5.5,
+        ABV: 6.2,
+      },
+      {
+        userId: 7,
+        name: 'Tsingtao IPA',
+        imageUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.CmHan3Ahts4hNsJ6W5SbbwAAAA%26pid%3DApi&f=1',
+        brewery: 'Tsingtao',
+        breweryLink: 'https://www.tsingtaobeer.com/',
+        description: 'Has a dark golden color with a 1/2 inch head. Smell is mild, malty. Taste is of malts, light hops, some herbal notes. Feels medium bodied in the mouth and overall is a decent beer.',
+        country: 'China',
+        rating: 7,
+        ABV: 5.5,
       },
     ], {});
 
