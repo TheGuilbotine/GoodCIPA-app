@@ -56,4 +56,3 @@ https://goodcipa.herokuapp.com/
 - Michelle Kontoff https://github.com/michellekontoff
 - Simon Vargas https://github.com/Simonvargas
 - Meagan Smith https://github.com/meagan13
-- Kagen Hearn https://github.com/KagenLH
