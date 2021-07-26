@@ -1,6 +1,6 @@
 # GoodCIPA by Pierre Guilbault
 
-# The IPA enthusiasts app. A cave of IPAs that can be added to and browsed to find new beers to open, try, and review.
+### The IPA enthusiasts app. A cave of IPAs that can be added to and browsed to find new beers to open, try, and review.
 
 ## Technologies Used
 - JavaScript
