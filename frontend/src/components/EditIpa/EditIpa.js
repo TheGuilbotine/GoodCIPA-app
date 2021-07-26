@@ -17,8 +17,8 @@ const EditIpa = () => {
     const [country, setCountry] = useState('');
     const [rating, setRating] = useState(5);
     const [ABV, setABV] = useState(5.5);
-    const [errors, setErrors] = useState([]);
-    const userId = useSelector(state => state.session.user.id);
+    const [errors] = useState([]);
+    // const userId = useSelector(state => state.session.user.id);
 
     const beers = useSelector(state => {
         return state.ipas;
@@ -45,7 +45,7 @@ const EditIpa = () => {
             setRating(beer.rating);
             setABV(beer.ABV);
         }
-    }, [])
+    }, [beer])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -76,13 +76,13 @@ const EditIpa = () => {
                     <i className="fas fa-arrow-circle-left"/>
                 </NavLink>
             </div>
-            <ul className='errors__container'>
-                {errors.map((error, idx) => (
-                    <li key={idx} className='errors'>{error}</li>
-                ))}
-            </ul>
             <section className='edit-ipa__form'>
                 <h1 className='edit-ipa__text'>Edit your {ipaName}</h1>
+                <ul className='errors__container'>
+                    {errors.map((error, idx) => (
+                        <li key={idx} className='errors'>{error}</li>
+                    ))}
+                </ul>
                 <form onSubmit={handleSubmit}>
                     <div className='edit_ipa__element-container'>
                         <i className='fas fa-beer'>

@@ -1,9 +1,10 @@
 .review-list__container {
-    margin-top: 22px;
+    margin-top: 33px;
 }
 
 .review-list__buttons__container {
-    margin-bottom: 9px;
+    display: flex;
+    flex-direction: column;
 }
 
 .review-list__back {
@@ -18,29 +19,29 @@
     padding-right: 33px;
 }
 
-.review-list__add {
-    font-size: xX-large;
-    text-decoration: none;
-    text-align: center;
-    text-shadow: rgb(184, 242, 245) 1px 0 10px;
-    color: rgb(192, 128, 8);
-    font-weight: 800;
-    margin-left: 7px;
-    background-color: rgba(0, 0, 0, 0);
-    /* padding-right: 11px; */
+.review-list__review__container {
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    align-content: center;
+    border: 1px solid rgb(192, 128, 8);
+    border-radius: 11px;
+    margin-bottom: 3px;
 }
 
 .review-list__left {
     margin-top: 2px;
     padding: 7px;
-    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
-    /* flex-direction: column; */
-    /* justify-content: center; */
-    align-content: center;
-    border: 1px solid rgb(192, 128, 8);
-    border-radius: 11px;
     color:burlywood;
+}
+
+.review-list__img__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 7px;
 }
 
 .review-list__review-link__image__container {

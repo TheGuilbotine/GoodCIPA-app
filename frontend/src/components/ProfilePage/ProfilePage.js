@@ -1,13 +1,12 @@
-// import { useHistory } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { csrfFetch } from '../../store/csrf';
-import AddIpa from '../AddIpa';
 import './ProfilePage.css';
+import { useSelector } from 'react-redux';
 
 function ProfilePage() {
-    // const history = useHistory();
     const [user, setUser] = useState('');
+    const sessionUser = useSelector(state => state.session.user);
 
     useEffect(() => {
         (async function() {
@@ -18,11 +17,12 @@ function ProfilePage() {
                 setUser(newUser);
             }
         })();
-    }, []);
+    }, [sessionUser]);
 
     return (
         <div className='profile-page__container'>
-            <h1 className='profile-page__text'>What'll it be {user.username}</h1>
+            {/* TODO  add {sessionUser.username}  to h1 question*/}
+            <h1 className='profile-page__text'>What'll it be {user}?</h1>
             <div className='profile-buttons__container'>
                 <div className='fridge'>
                     <NavLink className='profile-page__crackedopen' to='/cracked-open'>

@@ -10,10 +10,10 @@ export default function CrackOpen() {
     const history = useHistory();
     const {id} = useParams();
     const [comment, setComment] = useState('');
-    const [errors, setErrors] = useState([]);
+    // const [errors, setErrors] = useState([]);
     const userId = useSelector(state => state.session.user.id);
     const ipaId = useSelector(state => state.ipas[id].id);
-
+    const sessionUser = useSelector(state => state.session.user);
     const beers = useSelector(state => {
         return state.ipas;
     })
@@ -26,11 +26,11 @@ export default function CrackOpen() {
 
     useEffect(() => {
         dispatch(getCOs())
-    }, [dispatch])
+    }, [dispatch]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setErrors([]);
+        // setErrors([]);
         // const User = User.findByPk(User)
 
         const payload = {
@@ -57,22 +57,23 @@ export default function CrackOpen() {
                     <i className="fas fa-arrow-circle-left"/>
                 </NavLink>
             </div>
-            <ul className='errors__container'>
-                {errors.map((error, idx) => (
-                    <li key={idx} className='errors'>{error}</li>
-                ))}
-            </ul>
-            <section className='add-comment__form'>
-                {/* TODO get ipa name */}
+            <div className='add_comment__title__container'>
                 <h1 className='add-comment__text'>Crack Open and Review {beer.name} from {beer.brewery}</h1>
+            </div>
+            <section className='add-comment__form'>
+                {/* <ul className='errors__container'>
+                    {errors.map((error, idx) => (
+                        <li key={idx} className='errors'>{error}</li>
+                    ))}
+                </ul> */}
                 <form onSubmit={handleSubmit}>
                 <div className='add_comment__element-container'>
                         <i className='fas fa-beer'>
                             <div className='add-comment__input-container'>
-                                <input
+                                <textarea
                                     className='add-comment__input'
                                     // TODO Add ${beer.User.username}
-                                    placeholder={`How was your ${beer.name}`}
+                                    placeholder={`How was your ${beer.name} ${sessionUser.username}?`}
                                     type='text'
                                     value={comment}
                                     onChange={updateComment}

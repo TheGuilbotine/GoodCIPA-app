@@ -5,18 +5,37 @@
     align-content: center;
 }
 
-.ipa-content__container {
+.ipa-info__container {
+    max-width: 1000px;
+}
+
+.review-link__container {
     display: flex;
     justify-content: center;
-    border: 2px solid rgb(0, 0, 0);
-    background-color: rgba(192, 128, 8, 0.5);
-    border-radius: 11px;
-    flex-wrap: wrap;
 }
 
 .ipa__container {
     display: flex;
     flex-wrap: wrap;
+    justify-content:space-between ;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgb(192, 128, 8);
+    border-radius: 11px;
+    margin-bottom: 22px;
+    align-items: center;
+}
+
+@media (max-width: 1600px) {
+    .ipa__container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.7);
+        border: 1px solid rgb(192, 128, 8);
+        border-radius: 11px;
+        margin-bottom: 22px;
+        align-items: center;
+    }
 }
 
 .image-info__container {
@@ -27,7 +46,7 @@
 
 .image__container {
     border-radius: 11px;
-    margin: 7px 0px 0px 22px;
+    margin: 11px 22px 22px 22px;
     height: 444px;
 }
 
@@ -36,12 +55,11 @@
     flex-direction: column;
 }
 
-.ipa-stats__container {
-
-}
-
-.ipa__text {
+.ipa-page__text {
     text-align: center;
+    color: burlywood;
+    text-decoration: none;
+    padding: 0 22px;
 }
 
 .ipa-reviews__container {
@@ -50,4 +68,5 @@
     border-radius: 11px;
     color:burlywood;
     text-align: center;
+    margin-bottom: 3px;
 }

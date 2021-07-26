@@ -24,7 +24,7 @@
     justify-content: space-between;
     border: 1px solid rgb(192, 128, 8);
     padding: 0px 6px;
-    margin: 3px;
+    margin: 3px 3px 22px 3px;
     border-radius: 3px;
     color: rgb(192, 128, 8);
     text-decoration: none;
@@ -32,25 +32,29 @@
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-.fa-plus {
-    /* margin-top: 22px; */
-    border: none;
-    font-size: 44px;
-    color: rgb(10, 91, 95);
-    text-shadow: rgb(221, 188, 1) 1px 5px 10px;
+.ipa-list__ipa__container {
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    align-content: center;
+    border: 1px solid rgb(192, 128, 8);
+    border-radius: 11px;
+    margin-bottom: 3px;
 }
 
 .ipa-list__left {
     margin-top: 2px;
     padding: 7px;
-    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
-    /* flex-direction: column; */
-    /* justify-content: center; */
-    align-content: center;
-    border: 1px solid rgb(192, 128, 8);
-    border-radius: 11px;
     color:burlywood;
+}
+
+.ipa-list__img-co__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 7px;
 }
 
 .ipa-list__ipa-link__image__container {
@@ -59,9 +63,26 @@
 }
 
 .ipaLabel {
+    /* width: 99px; */
     height: 99px;
     border-radius: 33%;
     margin: 0px 11px;
+}
+
+.ipa-list__review-button__container {
+    display: flex;
+    justify-content: center;
+}
+
+.crack-open__button {
+    border: none;
+    border-radius: 11px;
+    text-decoration: none;
+    text-align: center;
+    text-shadow: rgb(184, 242, 245) 1px 0 10px;
+    color: rgb(255, 136, 0);
+    font-weight: 800;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .ipa-list__ipa-link__name {
@@ -72,6 +93,12 @@
 .ipa-list__ipa-link__brewery {
     color: rgb(230, 171, 64);
     text-decoration: none;
+}
+
+.ipa-list__buttons__container {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 7px;
 }
 
 .ipa-list__edit-button {
@@ -109,9 +136,6 @@
     margin-bottom: 11px;
     background-color: rgba(0, 0, 0, 0.7);
     display: flex;
-    /* flex-direction: column; */
-    /* justify-content: center; */
-    align-content: center;
     border: 1px solid rgb(192, 128, 8);
     border-radius: 11px;
 }

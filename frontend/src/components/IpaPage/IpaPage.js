@@ -7,7 +7,7 @@ import './IpaPage.css'
 
 
 export default function IpaPage() {
-    const {id} = useParams();
+    // const {id} = useParams();
     const [name, setName] = useState('');
     const [imageUrl, setImageUrl] = useState('');
     const [brewery, setBrewery] = useState('');
@@ -19,7 +19,7 @@ export default function IpaPage() {
     const [cos, setCos] = useState([]);
     const [user, setUser] = useState('');
     const currentUser = useSelector(state => state.session?.user);
-    console.log('currentUser', currentUser)
+    // console.log('currentUser', currentUser);
     const ipaId = useParams().id;
 
     useEffect(() => {
@@ -41,8 +41,8 @@ export default function IpaPage() {
                 setUser(currentUser);
             }
         })();
-    }, [ipaId]);
-
+    }, [ipaId, currentUser]);
+    // console.log(cos[0].userId);
 
     return (
         <div className='ipa-page__container'>
@@ -54,12 +54,14 @@ export default function IpaPage() {
             <div className='ipa-content__container'>
                 <div className='ipa__container'>
                     <div className='ipa-info__container'>
-                        <h1>{name} from <a href={breweryLink}>{brewery}</a></h1>
-                        <p>{description}</p>
-                        <NavLink className='ipa__add-review' to={`/crack-open/${id}`}>
-                            {/* <i className="fas fa-plus"/> */}
-                            Crack Open
-                        </NavLink>
+                        <h1 className='ipa-page__text'>{name} from<a className='ipa-page__text' href={breweryLink}>{brewery}</a></h1>
+                        <p className='ipa-page__text'>{description}</p>
+                        {/* TODO add working navigation to crackopen page */}
+                        {/* <div className='review-link__container'>
+                            <NavLink className='crack-open__button' to={`/crack-open/${id}`}>
+                                Crack Open
+                            </NavLink>
+                        </div> */}
                     </div>
                     <div className='image-info__container'>
                         <div className='image__container'>
@@ -67,21 +69,22 @@ export default function IpaPage() {
                         </div>
                         <div className='image-text__conatiner'>
                             <div className='ipa-stats_container'>
-                                <p className='ipa__text'>{rating} / 10 * ABV {ABV}%</p>
+                                <p  className='ipa-page__text'>Rating: {rating} / 10 * ABV {ABV}%</p>
                             </div>
                             <div className='ipa-country__container'>
-                                <p className='ipa__text'>{country}</p>
+                                <h3 className='ipa-page__text'>{country}</h3>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className='ipa-reviews__container'>
+            <div>
                 {/* TODO map over all reviews pertaining to this beer */}
                 {cos.map(review => {
                    return (
-                       <div key={review.id}>
-                            <h1>{user.username} said, {review.comment}. About {name}</h1>
+                       <div className='ipa-reviews__container' key={review.id}>
+                           {/* TODO add {review.User.username} to below h1 */}
+                            <h1> *  Someone said, {review.comment} About {name}  * </h1>
                         </div>
                    )
                 })}

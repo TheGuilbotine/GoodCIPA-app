@@ -23,7 +23,7 @@ function LoginForm() {
   };
 
   const demoLogin = () => {
-    const credential = 'Demo-lition'
+    const credential = 'Demo-licious'
     const password = 'password'
     history.push('/profile')
     return dispatch(sessionActions.login({ credential, password }))

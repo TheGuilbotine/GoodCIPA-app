@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { csrfFetch } from '../../store/csrf';
-import { useHistory } from 'react-router';
+// import { csrfFetch } from '../../store/csrf';
+// import { useHistory } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
-import { createIpa, destroyIpa, editIpa, getIpas } from '../../store/ipas';
+import { destroyIpa, getIpas } from '../../store/ipas';
 import './IpaList.css';
 
 
@@ -34,12 +34,21 @@ export default function IpaList() {
             </div>
             {ipas && ipas.map(ipa => (
                 // TODO add description to the right of the div or in a enw component...?
-                <div className='ipa-list__ipa-link__container'>
+                <div className='ipa-list__ipa__container'>
                     <div className='ipa-list__left'>
-                        <div className='ipa-list__ipa-link__image__container'>
-                            <NavLink to={`/ipas/${ipa.id}`} key={ipa.id} className='ipa-list__ipa-link__image'>
-                                <img className='ipaLabel' src={ipa.imageUrl} alt={ipa.name}/>
-                            </NavLink>
+                        <div className='ipa-list__img-co__container'>
+                            <div className='ipa-list__ipa-link__image__container'>
+                                <NavLink to={`/ipas/${ipa.id}`} key={ipa.id} className='ipa-list__ipa-link__image'>
+                                    <img className='ipaLabel' src={ipa.imageUrl} alt={ipa.name}/>
+                                </NavLink>
+                            </div>
+                            <div className='ipa-list__review-button__container'>
+                                <button className='crack-open__button'>
+                                    <NavLink class='crack-open__button' to={`/crack-open/${ipa.id}`}>
+                                        Crack Open
+                                    </NavLink>
+                                </button>
+                            </div>
                         </div>
                         <div className='ipa-list__ipa-info'>
                             <div className='ipa-list__ipa-info__container'>
@@ -57,33 +66,25 @@ export default function IpaList() {
                                 {/* <p>{ipa.description}</p> */}
                             </div>
                         </div>
-                        <div className='ipq-list__buttons__container'>
-                            <div className='ipa-list__review-button--container'>
-                                <button className='crack-open__button'>
-                                    <NavLink class='crack-open__button' to={`/crack-open/${ipa.id}`}>
-                                        Crack Open
-                                    </NavLink>
-                                </button>
-                            </div>
-                            <div className='ipa-list__crud-buttons__container'>
-                                { function ButtonsRender() {
-                                    // const sessionUser = useSelector(state => state.session.user);
-                                    if (sessionUser.id === ipa.userId) {
-                                        return (
-                                            <div className='ipa-list__crud-buttons'>
-                                                <button className='ipa-list__edit-button'>
-                                                    <NavLink className='ipa-list__edit-button' to={`/edit-ipa/${ipa.id}`}>
-                                                        EDIT
-                                                    </NavLink>
-                                                </button>
-                                                <button onClick={() => dispatch(destroyIpa(ipa.id))} className='ipa-list__delete-button'>DELETE</button>
-                                            </div>
-                                        )
-                                    }
-                                }()}
-                            </div>
+                    </div>
+                    <div className='ipa-list__buttons__container'>
+                        <div className='ipa-list__crud-buttons__container'>
+                            { function ButtonsRender() {
+                                // const sessionUser = useSelector(state => state.session.user);
+                                if (sessionUser.id === ipa.userId) {
+                                    return (
+                                        <div className='ipa-list__crud-buttons'>
+                                            <button className='ipa-list__edit-button'>
+                                                <NavLink className='ipa-list__edit-button' to={`/edit-ipa/${ipa.id}`}>
+                                                    EDIT
+                                                </NavLink>
+                                            </button>
+                                            <button onClick={() => dispatch(destroyIpa(ipa.id))} className='ipa-list__delete-button'>DELETE</button>
+                                        </div>
+                                    )
+                                }
+                            }()}
                         </div>
-
                     </div>
                 </div>
             ))}
