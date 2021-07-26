@@ -1,5 +1,7 @@
 # GoodCIPA by Pierre Guilbault
-![alt text](https://github.com/TheGuilbotine/GoodCIPA-app/blob/main/GCIPA-logo.png)
+<p align=center>
+  ![alt text](https://github.com/TheGuilbotine/GoodCIPA-app/blob/main/GCIPA-logo.png)
+</p>
 ### The IPA enthusiasts app. A cave of IPAs that can be added to and browsed to find new beers to open, try, and review.
 
 ## Technologies Used
