@@ -1,6 +1,6 @@
 # GoodCIPA by Pierre Guilbault
 <p align=center>
-  <img src='https://github.com/TheGuilbotine/GoodCIPA-app/blob/main/GCIPA-logo.png' alt='A logo of GoodCIPA' />
+  <img src='https://github.com/TheGuilbotine/GoodCIPA-app/blob/main/images/GCIPA-logo.png' alt='A logo of GoodCIPA' />
 </p>
 
 ### The IPA enthusiasts app. A cave of IPAs that can be added to and browsed to find new beers to open, try, and review.
@@ -17,7 +17,7 @@
 - Splash page allows users to access login, register, or use a Demo account to check out the app.
 
 <p align=center>
-  <img src='https://github.com/TheGuilbotine/GoodCIPA-app/blob/main/splash-gcipa.png' alt='Splash Page' />
+  <img src='https://github.com/TheGuilbotine/GoodCIPA-app/blob/main/images/splash-gcipa.png' alt='Splash Page' />
 </p>
 
 - All pages have a footer with links to the creators GitHub and Linkedin account.
@@ -26,19 +26,19 @@
 Or go to the fridge to see a list of beers reviewed by other users. Users can click on each beer and eventually will be able to see all of the reviews for that beer and who said it.
 
 <p align=center>
-  <img src='https://github.com/TheGuilbotine/GoodCIPA-app/blob/main/profile-gcipa.png' alt='Profile Page' />
+  <img src='https://github.com/TheGuilbotine/GoodCIPA-app/blob/main/images/profile-gcipa.png' alt='Profile Page' />
 </p>
 
 - From the Add or Edit beer form users will be able to dynamically add, edit, and delete beers.
  
 <p align=center>
-  <img src='https://github.com/TheGuilbotine/GoodCIPA-app/blob/main/add-gcipa.png' alt='Add IPA Page' />
+  <img src='https://github.com/TheGuilbotine/GoodCIPA-app/blob/main/images/add-gcipa.png' alt='Add IPA Page' />
 </p>
 
 - The Crack Open form will allow users to review/leave a comment about the beer they have tried.
 
 <p align=center>
-  <img src='https://github.com/TheGuilbotine/GoodCIPA-app/blob/main/review-gcipa.png' alt='Crack Open form Page' />
+  <img src='https://github.com/TheGuilbotine/GoodCIPA-app/blob/main/images/review-gcipa.png' alt='Crack Open form Page' />
 </p>
 
 ## App Link
