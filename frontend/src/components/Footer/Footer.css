@@ -1,11 +1,11 @@
-footer {
+.footer {
     border: 1px solid cadetblue;
-    border-radius: 11px;
+    border-radius: 11px 0px;
     margin-top: 22px;
-    padding: 3px;
+    padding: 20px 10px;
     display: flex;
     justify-content: flex-end;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 .footer__name-link {
@@ -13,10 +13,11 @@ footer {
 }
 
 .footer__link {
-    font-size: x-large;
+    font-size: xx-large;
     color: rgb(192, 128, 8);
     display: flex;
     justify-content: center;
+    text-decoration: none;
 }
 
 .footer__icons {
@@ -27,11 +28,13 @@ footer {
 .footer__designed-by {
     color: rgb(192, 128, 8);
     font-size: 22px;
+    font-weight: 600;
     margin-right: 7px;
 }
 
 .footer__name {
     color: rgb(192, 128, 8);
     font-size: 33px;
+    font-weight: 700;
     margin: 0;
 }

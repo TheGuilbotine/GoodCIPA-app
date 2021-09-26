@@ -19,7 +19,6 @@ function Navigation({ isLoaded }){
       <>
         <span className='nav-bar__login-signup'>
           <LoginFormModal />
-          {/* <NavLink className='nav__signup-button' to='/signup'>Create Account</NavLink> */}
           <SignUpFormModal />
         </span>
       </>
