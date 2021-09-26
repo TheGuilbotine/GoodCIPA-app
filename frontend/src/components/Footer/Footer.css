@@ -1,6 +1,6 @@
 .footer {
     border: 1px solid cadetblue;
-    border-radius: 11px 0px;
+    border-radius: 11px 11px 0px 0px;
     margin-top: 22px;
     padding: 20px 10px;
     display: flex;
